@@ -11,9 +11,8 @@ public class Mago
     public ArrayList Items { get; set; }
     public int Life { get; set; }
     public ArrayList Hechizos { get;  set; }
-    public int ValorAtaque { get;  set; }
     
-    public Mago(string name, int life)
+    public Mago(string name, int life, int valorAtaque)
     {
         this.Name = name;
         this.Items = new ArrayList();
@@ -21,28 +20,36 @@ public class Mago
         this.Hechizos = new ArrayList();
     }
     
-    public void RecibirAtaque(int damage)
+    public void RecibirAtaque(int ataque)
     {
         if (Life <= 0)
         {
             Console.WriteLine("Atacaste a un muerto :(");
         }
-        Life -= damage;
+        
+        Life -= ataque;
+        
         if (Life < 0)
         {
             Life = 0;
-
         }
-
     }
     
-    public void Curar(int cantidad)
+    public void Curar()
     {
-        Life += cantidad;
-        if (Life > 100)
-        {
-            Life = 100;
-        }
+        Life = 100;
+        Console.WriteLine("¡Nivel de vida al máximo!");
     }
 
+    public int CalcularAtaque()
+    {
+        int ataque = 0;
+        
+        foreach (var item in Items)
+        {
+            ataque += 0;
+        }
+
+        return ataque;
+    }
 }
