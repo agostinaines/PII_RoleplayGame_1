@@ -10,7 +10,7 @@ public class Program
         // Creacion personaje Mago (Romina)
         List<string> itemsMago = new List<string> { "Bastón", "Libro de Hechizos" };
         List<string> hechizos = new List<string> { "Rayo", "Teletransportación" };
-        Mago mago = new Mago("Gandalf", itemsMago, 100, hechizos, 20);
+        Mago mago = new Mago("Gandalf", 100);
         
         Console.WriteLine(mago.Name);
         

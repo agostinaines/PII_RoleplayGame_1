@@ -21,16 +21,45 @@ public class Mago
         this.Hechizos = new ArrayList();
     }
     
-    public void RecibirAtaque(int damage)
+    public void RecibirAtaque(Elfo elfo)
     {
         if (Life <= 0)
         {
             Console.WriteLine("Atacaste a un muerto :(");
         }
-        Life -= damage;
+        Life -= elfo.ValorAtaque;
         if (Life < 0)
         {
             Life = 0;
+
+        }
+
+    }
+    public void RecibirAtaque(Mago mago)
+    {
+        if (Life <= 0)
+        {
+            Console.WriteLine("Atacaste a un muerto :(");
+        }
+        Life -= mago.ValorAtaque;
+        if (Life < 0)
+        {
+            Life = 0;
+
+        }
+
+    }
+    public void RecibirAtaque(Enano enano)
+    {
+        if (Life <= 0)
+        {
+            Console.WriteLine("Atacaste a un muerto :(");
+        }
+        Life -= enano.ValorAtaque;
+        if (Life < 0)
+        {
+            Life = 0;
+            Console.WriteLine("El mago ha muerto.");
 
         }
 
