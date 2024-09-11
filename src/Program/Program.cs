@@ -7,7 +7,7 @@ public class Program
 {
     public static void Main()
     {
-        // Creacion personaje mago (Romina)
+        // Creacion personaje Mago (Romina)
         List<string> itemsMago = new List<string> { "Bastón", "Libro de Hechizos" };
         List<string> hechizos = new List<string> { "Rayo", "Teletransportación" };
         Mago mago = new Mago("Gandalf", itemsMago, 100, hechizos, 20);
@@ -19,6 +19,12 @@ public class Program
         Elfo elfo = new Elfo("Elfinho Jr", itemsElfo, 100, 15);
 
         Console.WriteLine(elfo.Name);
+        
+        // Creacion personaje Enano (Lui)
+        List<string> itemsEnano = new List<string> {"Martillo", "Escudo" };
+        Enano enano = new Enano("Poppy", itemsEnano, 200, 10);
+        
+        Console.WriteLine(enano.Name);
     }
     
 }
