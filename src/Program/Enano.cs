@@ -7,16 +7,16 @@ namespace Library;
 public class Enano
 {
     public string Name { get;  set; }
-    public List<string> Items { get; set; }
+    public List<Item> Items { get; set; }
     public int Life { get; set; }
     public int ValorAtaque { get;  set; }
     
-    public Enano(string name, List<string> items, int life, int valorAtaque)
+    public Enano(string name, int life)
     {
         this.Name = name;
-        this.Items = new List<string>(items);
+        this.Items = new List<Item>();
         this.Life = life;
-        this.ValorAtaque = valorAtaque;
+        this.ValorAtaque = 0;
     }
     
     public void RecibirAtaque(int damage)
@@ -35,6 +35,12 @@ public class Enano
         {
             Life = 100;
         }
+    }
+    
+    public void AddItem(Item item)
+    {
+        this.Items.Add(item);
+        ValorAtaque += item.Ataque;
     }
 
 }
