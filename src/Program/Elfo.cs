@@ -47,6 +47,12 @@ public class Elfo
         }
     }
 
+    public void AddItem(Item item)
+    {
+        this.Items.Add(item);
+        ValorAtaque += item.Ataque;
+    }
+
     public void Atacar(int damage, )
     {
         
