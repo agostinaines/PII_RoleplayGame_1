@@ -29,10 +29,10 @@ public class Mago
         ValorAtaque += item.Ataque;
     }
 
-    public void AddSpell(Spell spell)
+    /*public void AddSpell(Spell spell)
     {
         this.Spell.Add(spell);
-    }
+    }*/
     
     public void RecibirAtaque(int damage)
     {
@@ -40,10 +40,14 @@ public class Mago
         {
             Console.WriteLine("Atacaste a un muerto :(");
         }
-        Life -= damage;
-        if (Life < 0)
+        else
         {
-            Life = 0;
+            Life -= damage;
+            if (Life < 0)
+            {
+                Life = 0;
+                Console.WriteLine("Mataste a ese enemigo");
+            }
         }
     }
     
