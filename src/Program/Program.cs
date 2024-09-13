@@ -21,10 +21,14 @@ public class Program
         Console.WriteLine(elfo.Name);
         
         // Creacion personaje Enano (Lui)
-        List<string> itemsEnano = new List<string> {"Martillo", "Escudo" };
-        Enano enano = new Enano("Poppy", itemsEnano, 200, 10);
+        Item martillo = new Item("martillo", 20);
+        Item botas = new Item("botas", 5);
+        Enano enano = new Enano("Poppy", 200);
+        enano.AddItem(martillo);
+        enano.AddItem(botas);
         
-        Console.WriteLine(enano.Name);
+        
+        Console.WriteLine(enano.ValorAtaque);
     }
     
 }
