@@ -20,22 +20,41 @@ public class Elfo
         this.ValorAtaque = valorAtaque;
     }
     
-    public void RecibirAtaque(int damage)
+    public void RecibirAtaqueDeElfo(int damage)
     {
-        Life = Life - damage;
+        Life -= damage;
+        if (Life < 0)
+        {
+            Life = 0;
+        }
+    }
+    
+    public void RecibirAtaqueDeEnano(int damage)
+    {
+        Life -= damage;
+        if (Life < 0)
+        {
+            Life = 0;
+        }
+    }
+    
+    public void RecibirAtaqueDeMago(int damage)
+    {
+        Life -= damage;
         if (Life < 0)
         {
             Life = 0;
         }
     }
 
-    public void Curar(int cantidad)
+    public void Atacar(int damage, )
     {
-        Life += cantidad;
-        if (Life > 100)
-        {
-            Life = 100;
-        }
+        
+    }
+
+    public void Curar()
+    {
+        Life = 100; 
     }
 
 }
