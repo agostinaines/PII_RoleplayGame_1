@@ -28,13 +28,9 @@ public class Enano
         }
     }
 
-    public void Curar(int cantidad)
+    public void Curar()
     {
-        Life += cantidad;
-        if (Life > 100)
-        {
-            Life = 100;
-        }
+        Life = 100;
     }
     
     public void AddItem(Item item)
