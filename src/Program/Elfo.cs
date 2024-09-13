@@ -8,59 +8,46 @@ namespace Library;
 public class Elfo
 {
     public string Name { get;  set; }
-    public ArrayList Items { get; set; }
+    public List<Item> Items { get; set; }
     public int Life { get; set; }
+    public int MaxLife { get; set; }
     public int ValorAtaque { get;  set; }
     
-    public Elfo(string name, List<string> items, int life, int valorAtaque)
+    public Elfo(string name, int life)
     {
         this.Name = name;
-        this.Items = new ArrayList(items);
+        this.Items = new List<Item>();
         this.Life = life;
-        this.ValorAtaque = valorAtaque;
+        this.MaxLife = life;
+        this.ValorAtaque = 0;
     }
     
-    public void RecibirAtaqueDeElfo(int damage)
+    public void RecibirAtaque(int damage)
     {
-        Life -= damage;
-        if (Life < 0)
+        if (Life <= 0)
         {
-            Life = 0;
+            Console.WriteLine("Atacaste a un muerto :(");
         }
-    }
-    
-    public void RecibirAtaqueDeEnano(int damage)
-    {
-        Life -= damage;
-        if (Life < 0)
+        else
         {
-            Life = 0;
+            Life -= damage;
+            if (Life < 0)
+            {
+                Life = 0;
+                Console.WriteLine("Mataste a ese enemigo");
+            }
         }
-    }
-    
-    public void RecibirAtaqueDeMago(int damage)
-    {
-        Life -= damage;
-        if (Life < 0)
-        {
-            Life = 0;
-        }
-    }
-
-    public void AddItem(Item item)
-    {
-        this.Items.Add(item);
-        ValorAtaque += item.Ataque;
-    }
-
-    public void Atacar(int damage, )
-    {
-        
     }
 
     public void Curar()
     {
-        Life = 100; 
+        Life = MaxLife; 
+    }
+    
+    public void AddItem(Item item)
+    {
+        this.Items.Add(item);
+        ValorAtaque += item.Ataque;
     }
 
 }

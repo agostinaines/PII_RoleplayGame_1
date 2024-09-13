@@ -7,28 +7,62 @@ public class Program
 {
     public static void Main()
     {
-        // Creacion personaje Mago (Romina)
-        List<string> itemsMago = new List<string> { "Bastón", "Libro de Hechizos" };
-        List<string> hechizos = new List<string> { "Rayo", "Teletransportación" };
-        Mago mago = new Mago("Gandalf", itemsMago, 100, hechizos, 20);
+        // Items
         
-        Console.WriteLine(mago.Name);
-        
-        // Creacion personaje Elfo (Pilar)
-        List<string> itemsElfo = new List<string> { "Arco", "Flechas" };
-        Elfo elfo = new Elfo("Elfinho Jr", itemsElfo, 100, 15);
-
-        Console.WriteLine(elfo.Name);
-        
-        // Creacion personaje Enano (Lui)
         Item martillo = new Item("martillo", 20);
         Item botas = new Item("botas", 5);
-        Enano enano = new Enano("Poppy", 200);
-        enano.AddItem(martillo);
-        enano.AddItem(botas);
+        Item lanzaDardos = new Item("lanza dardos", 45);
+        Item bastonCurativo = new Item("Baston curativo", 20);
+        Item Baculo = new Item("Baculo", 55);
+        
+        // Spells
+
+        Spell rayo = new Spell("Rayo electrico", 100);
+        Spell fuego = new Spell("Bola de fuego", 90);
+
+        
+        // Creacion de personajes
+
+        Enano poppy = new Enano("Poppy", 200);
+        poppy.AddItem(martillo);
+        poppy.AddItem(botas);
+
+        Enano teemo = new Enano("Teemo", 150);
+        teemo.AddItem(lanzaDardos);
+        teemo.AddItem(botas);
+
+        Elfo soraka = new Elfo("Soraka", 120);
+        soraka.AddItem(bastonCurativo);
+
+        Mago veigar = new Mago("Veigar", 80);
+        veigar.AddItem(Baculo);
+        veigar.AddSpell(rayo);
         
         
-        Console.WriteLine(enano.ValorAtaque);
+        Console.WriteLine("Vida de Poppy " + poppy.Life);
+        Console.WriteLine("Valor de ataque de teemo " + teemo.ValorAtaque);
+        Console.WriteLine("Valor de ataque de soraka " + soraka.ValorAtaque);
+        
+        // Teemo ataca a Poppy
+        poppy.RecibirAtaque(teemo.ValorAtaque);
+        Console.WriteLine(poppy.Life);
+        
+        // Poppy se cura
+        poppy.Curar();
+        Console.WriteLine(poppy.Life);
+        
+        // Soraka ataca a poppy
+        poppy.RecibirAtaque(soraka.ValorAtaque);
+        Console.WriteLine(poppy.Life);
+        
+        // Teemo ataca a soraka
+        soraka.RecibirAtaque(teemo.ValorAtaque);
+        Console.WriteLine(soraka.Life);
+        
+        // Veigar usa un spell contra Poppy
+        poppy.RecibirAtaque(veigar.UsarSpell(rayo));
+        Console.WriteLine(poppy.Life);
+
     }
     
 }
