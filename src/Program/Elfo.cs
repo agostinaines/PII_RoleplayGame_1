@@ -43,5 +43,11 @@ public class Elfo
     {
         Life = MaxLife; 
     }
+    
+    public void AddItem(Item item)
+    {
+        this.Items.Add(item);
+        ValorAtaque += item.Ataque;
+    }
 
 }

@@ -10,6 +10,7 @@ public class Mago
     public string Name { get;  set; }
     public ArrayList Items { get; set; }
     public int Life { get; set; }
+    public int MaxLife { get; set; }
     
     public ArrayList Spells { get;  set; }
     
@@ -20,6 +21,7 @@ public class Mago
         this.Name = name;
         this.Items = new ArrayList();
         this.Life = life;
+        this.MaxLife = life;
         this.Spells = new ArrayList();
     }
 
@@ -29,10 +31,10 @@ public class Mago
         ValorAtaque += item.Ataque;
     }
 
-    /*public void AddSpell(Spell spell)
+    public void AddSpell(Spell spell)
     {
-        this.Spell.Add(spell);
-    }*/
+        this.Spells.Add(spell);
+    }
     
     public void RecibirAtaque(int damage)
     {
@@ -53,6 +55,19 @@ public class Mago
     
     public void Curar()
     {
-        Life = 100;
+        Life = MaxLife;
+    }
+
+    public int UsarSpell(Spell spell)
+    {
+        foreach (Spell hechizos in Spells)
+        {
+            if (hechizos == spell)
+            {
+                return spell.Ataque;
+            }
+        }
+
+        return 0;
     }
 }

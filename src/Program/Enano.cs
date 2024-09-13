@@ -32,7 +32,7 @@ public class Enano
         }
         else
         {
-            Life -= (damage * Armadura) / 100;
+            Life -= damage - ((damage * Armadura) / 100);
             if (Life < 0)
             {
                 Life = 0;
