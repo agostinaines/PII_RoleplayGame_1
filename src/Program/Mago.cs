@@ -22,6 +22,17 @@ public class Mago
         this.Life = life;
         this.Spells = new ArrayList();
     }
+
+    public void AddItem(Item item)
+    {
+        this.Items.Add(item);
+        ValorAtaque += item.Ataque;
+    }
+
+    public void AddSpell(Spell spell)
+    {
+        this.Spell.Add(spell);
+    }
     
     public void RecibirAtaque(int damage)
     {
@@ -33,7 +44,6 @@ public class Mago
         if (Life < 0)
         {
             Life = 0;
-
         }
     }
     
