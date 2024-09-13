@@ -10,7 +10,9 @@ public class Mago
     public string Name { get;  set; }
     public ArrayList Items { get; set; }
     public int Life { get; set; }
-    public ArrayList Hechizos { get;  set; }
+    
+    public ArrayList Spells { get;  set; }
+    
     public int ValorAtaque { get;  set; }
     
     public Mago(string name, int life)
@@ -18,7 +20,7 @@ public class Mago
         this.Name = name;
         this.Items = new ArrayList();
         this.Life = life;
-        this.Hechizos = new ArrayList();
+        this.Spells = new ArrayList();
     }
     
     public void RecibirAtaque(int damage)
@@ -33,16 +35,10 @@ public class Mago
             Life = 0;
 
         }
-
     }
     
-    public void Curar(int cantidad)
+    public void Curar()
     {
-        Life += cantidad;
-        if (Life > 100)
-        {
-            Life = 100;
-        }
+        Life = 100;
     }
-
 }
