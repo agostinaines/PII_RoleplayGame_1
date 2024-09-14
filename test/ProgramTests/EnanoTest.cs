@@ -1,11 +1,9 @@
 using Library;
-using NUnit.Framework;
-using System.Collections;
 
 //Test de Luis
 namespace ProgramTests
 {
-    public class Tests
+    public class TestEnano
     {
         private Enano enano;
 
