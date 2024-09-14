@@ -1,10 +1,9 @@
 using Library;
-using NUnit.Framework;
-using System.Collections;
 
+//Test de Pilar
 namespace ProgramTests
 {
-    public class Tests
+    public class TestsMago
     {
         private Mago mago;
 
