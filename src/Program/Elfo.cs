@@ -41,7 +41,7 @@ public class Elfo
 
     public void Curar()
     {
-        Life = MaxLife; 
+        Life = MaxLife;
     }
     
     public void AddItem(Item item)
@@ -49,5 +49,4 @@ public class Elfo
         this.Items.Add(item);
         ValorAtaque += item.Ataque;
     }
-
 }

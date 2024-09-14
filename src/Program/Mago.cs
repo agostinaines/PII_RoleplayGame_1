@@ -11,9 +11,7 @@ public class Mago
     public ArrayList Items { get; set; }
     public int Life { get; set; }
     public int MaxLife { get; set; }
-    
     public ArrayList Spells { get;  set; }
-    
     public int ValorAtaque { get;  set; }
     
     public Mago(string name, int life)
@@ -67,7 +65,6 @@ public class Mago
                 return spell.Ataque;
             }
         }
-
         return 0;
     }
 }

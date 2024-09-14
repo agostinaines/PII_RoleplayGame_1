@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 
@@ -11,7 +12,6 @@ public class Enano
     public int Life { get; set; }
     public int MaxLife { get; set; }
     public int ValorAtaque { get;  set; }
-    
     public int Armadura { get;  set; }
     
     public Enano(string name, int life)
@@ -51,5 +51,4 @@ public class Enano
         this.Items.Add(item);
         ValorAtaque += item.Ataque;
     }
-
 }
