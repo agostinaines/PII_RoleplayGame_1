@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using System.Collections;
 using System.Collections.Generic;
 using Library;
 
@@ -12,9 +11,8 @@ namespace LibraryTests
         [SetUp]
         public void Setup()
         {
-            // Inicializamos un objeto Elfo antes de cada test
-            List<string> items = new List<string> { "Espada", "Escudo" };
-            elfo = new Elfo("Legolas", items, 100, 50);
+            // Inicializamos un objeto Elfo antes de cada test con un nombre y 100 de vida
+            elfo = new Elfo("Legolas", 100);
         }
 
         [Test]
@@ -23,10 +21,9 @@ namespace LibraryTests
             // Verificamos que los valores iniciales son los esperados
             Assert.AreEqual("Legolas", elfo.Name);
             Assert.AreEqual(100, elfo.Life);
-            Assert.AreEqual(50, elfo.ValorAtaque);
-            Assert.AreEqual(2, elfo.Items.Count);
-            Assert.Contains("Espada", elfo.Items);
-            Assert.Contains("Escudo", elfo.Items);
+            Assert.AreEqual(100, elfo.MaxLife);
+            Assert.AreEqual(0, elfo.ValorAtaque);
+            Assert.AreEqual(0, elfo.Items.Count);
         }
 
         [Test]
@@ -44,19 +41,34 @@ namespace LibraryTests
         }
 
         [Test]
-        public void Curar_AumentaVida()
+        public void Curar_RestauraVidaAlMaximo()
         {
             elfo.RecibirAtaque(50);
-            elfo.Curar(20);     
-            Assert.AreEqual(70, elfo.Life);
+            elfo.Curar(); // Curar sin parámetro, restaura la vida al máximo
+            Assert.AreEqual(100, elfo.Life);
         }
 
         [Test]
-        public void Curar_NoSuperaMaximoDeVida()
+        public void AgregarItem_AumentaValorAtaque()
         {
-            elfo.RecibirAtaque(10);  
-            elfo.Curar(50);    
-            Assert.AreEqual(100, elfo.Life);
+            // Creamos un item de prueba
+            var item = new Item { Nombre = "Espada", Ataque = 20 };
+            elfo.AddItem(item);
+
+            // Verificamos que el valor de ataque aumenta
+            Assert.AreEqual(20, elfo.ValorAtaque);
+            Assert.AreEqual(1, elfo.Items.Count);
+        }
+
+        [Test]
+        public void RecibirAtaque_AEnemigoMuerto_NoCambiaVida()
+        {
+            // Reducimos la vida a cero
+            elfo.RecibirAtaque(100);
+            elfo.RecibirAtaque(30);
+
+            // Verificamos que la vida no cambia
+            Assert.AreEqual(0, elfo.Life);
         }
     }
 }
