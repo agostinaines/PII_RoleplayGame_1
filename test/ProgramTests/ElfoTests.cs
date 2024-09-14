@@ -1,8 +1,9 @@
 using Library;
 
+//Test de Agostina
 namespace ProgramTests
 {
-    public class Tests
+    public class TestsElfo
     {
         private Elfo elfo;
 
