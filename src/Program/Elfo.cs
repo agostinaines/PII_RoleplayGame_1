@@ -8,7 +8,7 @@ namespace Library;
 public class Elfo
 {
     public string Name { get;  set; }
-    public List<Item> Items { get; set; }
+    public ArrayList Items { get; set; }
     public int Life { get; set; }
     public int MaxLife { get; set; }
     public int ValorAtaque { get;  set; }
@@ -16,7 +16,7 @@ public class Elfo
     public Elfo(string name, int life)
     {
         this.Name = name;
-        this.Items = new List<Item>();
+        this.Items = new ArrayList();
         this.Life = life;
         this.MaxLife = life;
         this.ValorAtaque = 0;
