@@ -20,11 +20,12 @@ public class Mago
         this.Spells = new ArrayList();
     }
 
-    public void AddItem(Item item)
-    {
-        this.Items.Add(item);
-        ValorAtaque += item.Ataque;
-    }
+    /*
+     public void AddItem(Item item)
+     {
+         this.Items.Add(item);
+         ValorAtaque += item.Ataque;
+     }*/
 
     public void AddSpell(Spell spell)
     {

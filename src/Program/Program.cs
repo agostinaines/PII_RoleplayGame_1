@@ -8,6 +8,7 @@ public class Program
         // Items
 
         // Items Luis
+        /*
         Item martillo = new Item("martillo", 20);
         Item botas = new Item("botas", 5);
         Item lanzaDardos = new Item("lanza dardos", 45);
@@ -24,6 +25,7 @@ public class Program
         Item morgul = new Item("Morgul", 35);
         Item sting = new Item("Sting", 45);
         Item anilloUnico = new Item("Anillo Único", 250);
+        */
 
         // Spells
 
@@ -44,6 +46,7 @@ public class Program
         // Creación de personajes
 
         // PERSONAJES LUIS
+        /*
         Enano poppy = new Enano("Poppy", 200);
         poppy.AddItem(martillo);
         poppy.AddItem(botas);
@@ -58,6 +61,7 @@ public class Program
         Mago veigar = new Mago("Veigar", 80);
         veigar.AddItem(baculo);
         veigar.AddSpell(rayo);
+        
 
         Console.WriteLine("La vida de Poppy es de " + poppy.Life);
         Console.WriteLine("El valor de ataque de Teemo " + teemo.ValorAtaque);
@@ -141,5 +145,6 @@ public class Program
         // Saruman usa un hechizo contra Galadriel
         galadriel.RecibirAtaque(saruman.UsarSpell(tornado));
         Console.WriteLine("La vida de Galdriel es de " + galadriel.Life + "\n");
+        */
     }
 }
