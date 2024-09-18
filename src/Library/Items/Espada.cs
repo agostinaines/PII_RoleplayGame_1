@@ -1,17 +1,27 @@
-﻿namespace Library;
+﻿using Library.Interfaces;
+namespace Library;
 
-public class Espada
+public class Espada: IIItemAttack, IItemDefense
 {
     public string Name { get;  set; }
-    public int Ataque { get;  set; }
+    public int Attack { get;  set; }
+    public int Defense { get; set; }
     
-    public int Defensa { get; set; }
+    public bool IsAttack()
+    {
+        return true;
+    }
+
+    public bool IsDefense()
+    {
+        return true;
+    }
     
-    public Espada(string name, int Ataque, int Defensa)
+    public Espada(string name, int ataque, int defense)
     {
         this.Name = name;
-        this.Ataque = Ataque;
-        this.Defensa = Defensa;
+        this.Attack = ataque;
+        this.Defense = defense;
     }
     
     

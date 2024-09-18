@@ -1,13 +1,19 @@
-﻿namespace Library;
+﻿using Library.Interfaces;
+namespace Library;
 
-public class Armadura
+public class Armadura: IItemDefense
 {
     public string Name { get;  set; }
-    public int Defensa { get; set; }
+    public int Defense { get; set; }
+
+    public bool IsDefense()
+    {
+        return true;
+    }
     
-    public Armadura(string name, int Defensa)
+    public Armadura(string name, int defense)
     {
         this.Name = name;
-        this.Defensa = Defensa;
+        this.Defense = defense;
     }
 }
