@@ -1,9 +1,12 @@
 ﻿using Library;
+using Library.Interfaces;
 
 public class Program
 {
     public static void Main()
     {
+        List<IIsMagic> SpellBook = new List<IIsMagic>();
+        
         Console.WriteLine("¡Bienvenidos a la Tierra Media! \n");
         // Items
 

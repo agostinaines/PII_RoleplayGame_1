@@ -2,7 +2,7 @@
 
 public interface IItemDefense
 {
-    public string Name { get; set; }
-    public int Defense { get; set; }
-    public bool IsDefense();
+    string Name { get; set; }
+    int Defense { get; set; }
+    bool IsDefense();
 }

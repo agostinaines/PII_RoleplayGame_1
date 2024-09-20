@@ -1,64 +1,66 @@
 using System.Collections;
+using Library.Interfaces;
 
 namespace Library;
 
-public class Mago
+public class Mago: ICharacter
 {
     public string Name { get;  set; }
-    public ArrayList Items { get; set; }
-    public int Life { get; set; }
-    public int MaxLife { get; set; }
-    public ArrayList Spells { get;  set; }
-    public int ValorAtaque { get;  set; }
+    public int MaxHealth { get; set; }
+    public int Health { get; set; }
+    public List<IItem> Items { get; set; }
+    public int AttackValue { get; set; }
+    public int DefenseValue { get; set; }
+    public List<Spell> Spells { get;  set; }
     
     public Mago(string name, int life)
     {
         this.Name = name;
-        this.Items = new ArrayList();
-        this.Life = life;
-        this.MaxLife = life;
-        this.Spells = new ArrayList();
+        this.MaxHealth = life;
+        this.Health = life;
+        this.Items = new List<IItem>();
+        this.Spells = new List<Spell>();
     }
 
-    /*
-     public void AddItem(Item item)
+    public void Cure()
+    {
+        Health = MaxHealth;
+    }
+    
+     public void AddItem(IItem item)
      {
          this.Items.Add(item);
-         ValorAtaque += item.Ataque;
-     }*/
+         AttackValue += item.Attack;
+         DefenseValue += item.Defense;
+     }
 
     public void AddSpell(Spell spell)
     {
         this.Spells.Add(spell);
     }
     
-    public void RecibirAtaque(int damage)
+    public void ReceiveAttack(int damage)
     {
-        if (Life <= 0)
+        if (Health <= 0)
         {
             Console.WriteLine("Atacaste a un muerto :(");
         }
         else
         {
-            Life -= damage;
-            if (Life < 0)
+            Health -= damage;
+            if (Health < 0)
             {
-                Life = 0;
+                Health = 0;
                 Console.WriteLine("Mataste a ese enemigo");
             }
         }
     }
-    
-    public void Curar()
-    {
-        Life = MaxLife;
-    }
 
     public int UsarSpell(Spell spell)
     {
-        foreach (Spell hechizos in Spells)
+        foreach (Spell spells in Spells)
         {
-            if (hechizos == spell)
+            if (spells == spell)
             {
                 return spell.Ataque;
             }

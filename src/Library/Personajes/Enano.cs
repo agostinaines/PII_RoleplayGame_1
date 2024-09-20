@@ -1,8 +1,9 @@
 using System.Collections;
+using Library.Interfaces;
 
 namespace Library;
 
-public class Enano
+public class Enano: ICharacter
 {
     public string Name { get;  set; }
     public ArrayList Items { get; set; }
@@ -10,6 +11,7 @@ public class Enano
     public int MaxLife { get; set; }
     public int ValorAtaque { get;  set; }
     public int Armadura { get;  set; }
+    public int DefenseAttack { get; set; }
     
     public Enano(string name, int life)
     {
@@ -43,10 +45,10 @@ public class Enano
         Life = MaxLife;
     }
     
-    /*
-     public void AddItem(Item item)
-     {
-         this.Items.Add(item);
-         ValorAtaque += item.Ataque;
-     }*/
+    public void AddItem(IItem item)
+    {
+        this.Items.Add(item);
+        ValorAtaque += item.Attack;
+        DefenseAttack += item.Defense;
+    }
 }
