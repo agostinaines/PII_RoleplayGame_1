@@ -1,8 +1,9 @@
 using System.Collections;
-
+using System.Diagnostics;
+using Library.Interfaces;
 namespace Library;
 
-public class Enano
+public class Enano : IAddArmadura
 {
     public string Name { get;  set; }
     public ArrayList Items { get; set; }
@@ -42,11 +43,10 @@ public class Enano
     {
         Life = MaxLife;
     }
-    
-    /*
-     public void AddItem(Item item)
-     {
-         this.Items.Add(item);
-         ValorAtaque += item.Ataque;
-     }*/
+
+    public void AddArmadura(Armadura armadura)
+    {
+        this.Items.Add(armadura);
+    }
+
 }

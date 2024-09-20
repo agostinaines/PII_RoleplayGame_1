@@ -1,8 +1,9 @@
 using System.Collections;
+using Library.Interfaces;
 
 namespace Library;
 
-public class Mago
+public class Mago : IAddEspada
 {
     public string Name { get;  set; }
     public ArrayList Items { get; set; }
@@ -19,13 +20,7 @@ public class Mago
         this.MaxLife = life;
         this.Spells = new ArrayList();
     }
-
-    /*
-     public void AddItem(Item item)
-     {
-         this.Items.Add(item);
-         ValorAtaque += item.Ataque;
-     }*/
+    
 
     public void AddSpell(Spell spell)
     {
@@ -64,5 +59,11 @@ public class Mago
             }
         }
         return 0;
+    }
+    
+    public void AddEspada(Espada espada)
+    {
+        this.Items.Add(espada);
+        ValorAtaque += espada.Attack;
     }
 }

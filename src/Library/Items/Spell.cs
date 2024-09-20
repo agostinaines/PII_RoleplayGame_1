@@ -11,9 +11,9 @@ public class Spell
         return true;
     }
     
-    public Spell(string name, int Ataque)
+    public Spell(string name, int ataque)
     {
         this.Name = name;
-        this.Ataque = Ataque;
+        this.Ataque = ataque;
     }
 }

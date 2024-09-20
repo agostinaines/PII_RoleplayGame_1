@@ -1,8 +1,9 @@
 ﻿using System.Collections;
+using Library.Interfaces;
 
 namespace Library;
 
-public class Elfo
+public class Elfo : IAddArco
 {
     public string Name { get;  set; }
     public ArrayList Items { get; set; }
@@ -41,10 +42,10 @@ public class Elfo
         Life = MaxLife;
     }
     
-    /*
-    public void AddItem(Item item)
+    
+    public void AddArco(Arco arco)
     {
-        this.Items.Add(item);
-        ValorAtaque += item.Ataque;
-    }*/
+        this.Items.Add(arco);
+        ValorAtaque += arco.Attack;
+    }
 }
