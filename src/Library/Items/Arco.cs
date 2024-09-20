@@ -1,16 +1,22 @@
-﻿namespace Library;
+﻿using System.Data.SqlTypes;
+using Library.Interfaces;
+namespace Library;
 
-public class Arco
+public class Arco: IIItemAttack
 {
     public string Name { get;  set; }
-    public int Ataque { get;  set; }
+    public int Attack { get;  set; }
+    public int Defense { get; set; }
+
+    public bool IsAttack()
+    {
+        return true;
+    }
     
-    public int Defensa { get; set; }
-    
-    public Arco(string name, int Ataque, int Defensa)
+    public Arco(string name, int ataque, int defense)
     {
         this.Name = name;
-        this.Ataque = Ataque;
-        this.Defensa = Defensa;
+        this.Attack = ataque;
+        this.Defense = defense;
     }
 }
