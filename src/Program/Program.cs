@@ -149,5 +149,8 @@ public class Program
         galadriel.RecibirAtaque(saruman.UsarSpell(tornado));
         Console.WriteLine("La vida de Galdriel es de " + galadriel.Life + "\n");
         */
+
+        ICharacter veigar = new Mago("Veigar", 100);
+        ICharacter malzahar = new Mago("Malzahar", 100);
     }
 }
