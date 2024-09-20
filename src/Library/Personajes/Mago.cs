@@ -47,7 +47,7 @@ public class Mago: ICharacter
         }
         else
         {
-            Health -= damage;
+            Health -= ((damage * DefenseValue) / 100);
             if (Health < 0)
             {
                 Health = 0;
