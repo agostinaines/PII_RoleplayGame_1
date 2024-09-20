@@ -16,4 +16,9 @@ public class Spell
         this.Name = name;
         this.Ataque = Ataque;
     }
+    
+    public bool IsMagic()
+    {
+        return true;
+    }
 }

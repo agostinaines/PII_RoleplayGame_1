@@ -24,5 +24,9 @@ public class Espada: IIItemAttack, IItemDefense
         this.Defense = defense;
     }
     
+    public bool IsMagic()
+    {
+        return false;
+    }
     
 }

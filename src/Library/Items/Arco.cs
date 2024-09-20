@@ -1,6 +1,4 @@
-﻿using System.Data.SqlTypes;
-using System.Security.Cryptography;
-using Library.Interfaces;
+﻿using Library.Interfaces;
 namespace Library;
 
 public class Arco: IIItemAttack, IIsMagic
@@ -12,11 +10,6 @@ public class Arco: IIItemAttack, IIsMagic
     public bool IsAttack()
     {
         return true;
-    }
-    
-    public void AddItem(ICharacter Character)
-    {
-        
     }
     
     public Arco(string name, int ataque, int defense)
