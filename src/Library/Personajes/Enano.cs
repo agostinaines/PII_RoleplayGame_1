@@ -48,5 +48,5 @@ public class Enano : IAddArmadura
     {
         this.Items.Add(armadura);
     }
-
+    
 }

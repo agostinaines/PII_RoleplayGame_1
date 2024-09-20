@@ -15,6 +15,68 @@ namespace ProgramTests
         }
 
         [Test]
+
+        public void CrearElfo_ValoresInicialesCorrectos()
+        {
+            Assert.That("Legolas", Is.EqualTo(elfo.Name));
+            Assert.That(100, Is.EqualTo(elfo.Life));
+            Assert.That(100, Is.EqualTo(elfo.MaxLife));
+            Assert.That(0, Is.EqualTo(elfo.ValorAtaque));
+            Assert.That(0, Is.EqualTo(elfo.Items.Count));
+            
+        }
+        
+        [Test]
+        public void RecibirAtaque_ReduceVida()
+        {
+            elfo.RecibirAtaque(30);
+            Assert.That(70, Is.EqualTo(elfo.Life));
+        }
+        
+        [Test]
+        public void RecibirAtaque_NoBajaDeCero()
+        {
+            elfo.RecibirAtaque(150);
+            Assert.That(0, Is.EqualTo(elfo.Life));
+        }
+        
+        [Test]
+        public void Curar_RestauraVidaAlMaximo()
+        {
+            elfo.RecibirAtaque(50);
+            elfo.Curar(); // Curar sin parámetro, restaura la vida al máximo
+            Assert.That(100, Is.EqualTo(elfo.Life));
+        }
+        
+        [Test]
+        public void AgregarItem_AumentaValorAtaque()
+        {
+            // Creamos un item de prueba
+            Arco flechero = new Arco("Flechero", 35, 0);
+            elfo.AddArco(flechero);
+
+            // Verificamos que el valor de ataque aumenta
+            Assert.That(35, Is.EqualTo(elfo.ValorAtaque));
+            Assert.That(1, Is.EqualTo(elfo.Items.Count));
+            
+        }
+        
+        [Test]
+        public void RecibirAtaque_AEnemigoMuerto_NoCambiaVida()
+        {
+            // Reducimos la vida a cero
+            elfo.RecibirAtaque(100);
+            elfo.RecibirAtaque(30);
+
+            // Verificamos que la vida no cambia
+            Assert.That(0, Is.EqualTo(elfo.Life));
+            
+        }
+    }
+}
+
+
+/*
         public void CrearElfo_ValoresInicialesCorrectos()
         {
             // Verificamos que los valores iniciales son los esperados
@@ -71,3 +133,4 @@ namespace ProgramTests
         }
     }
 }
+*/

@@ -3,7 +3,7 @@ using Library.Interfaces;
 
 namespace Library;
 
-public class Elfo : IAddArco
+public class Elfo : IAddArco 
 {
     public string Name { get;  set; }
     public ArrayList Items { get; set; }
@@ -44,6 +44,12 @@ public class Elfo : IAddArco
     
     
     public void AddArco(Arco arco)
+    {
+        this.Items.Add(arco);
+        ValorAtaque += arco.Attack;
+    }
+    
+    public void AddEs(Arco arco)
     {
         this.Items.Add(arco);
         ValorAtaque += arco.Attack;

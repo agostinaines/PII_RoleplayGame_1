@@ -1,5 +1,63 @@
 using Library;
 
+namespace ProgramTests
+{
+    public class TestEnano
+    {
+        private Enano enano;
+
+        [SetUp]
+        public void Setup()
+        {
+            // Inicializamos un objeto Enano antes de cada test con un nombre y 100 de vida
+            enano = new Enano("Gimli", 100);
+        }
+        
+        [Test]
+        public void CrearEnano_ValoresInicialesCorrectos()
+        {
+            // Verificamos que los valores iniciales son los esperados
+            Assert.That("Gimli", Is.EqualTo(enano.Name));
+            Assert.That(100, Is.EqualTo(enano.Life));
+            Assert.That(100 , Is.EqualTo(enano.MaxLife));
+            Assert.That(0, Is.EqualTo(enano.ValorAtaque));
+            Assert.That(30, Is.EqualTo(enano.Armadura));
+            Assert.That(0, Is.EqualTo(enano.Items.Count));
+            
+        }
+        
+        [Test]
+        public void RecibirAtaque_ReduceVidaConArmadura()
+        {
+            // Daño es reducido por la armadura, se aplica un 30% de reducción
+            enano.RecibirAtaque(100);
+            // El daño efectivo es 100 - 30% = 70, por lo que la vida debe ser 100 - 70 = 30
+            Assert.That(30, Is.EqualTo(enano.Life));
+        }
+        
+        [Test]
+        public void RecibirAtaque_NoBajaDeCero()
+        {
+            enano.RecibirAtaque(200);
+            Assert.That(0, Is.EqualTo(enano.Life));
+        }
+        
+        [Test]
+        public void Curar_RestauraVidaAlMaximo()
+        {
+            enano.RecibirAtaque(50);  // Recibe daño
+            enano.Curar();  // Curar restaura la vida al máximo
+            Assert.That(100, Is.EqualTo(enano.Life));
+        }
+        
+    }
+}
+
+
+
+
+
+/*
 //Test de Luis
 namespace ProgramTests
 {
@@ -74,3 +132,4 @@ namespace ProgramTests
         }
     }
 }
+*/
