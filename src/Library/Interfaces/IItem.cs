@@ -1,6 +1,6 @@
 ﻿namespace Library.Interfaces;
 
-public interface IItem: IIItemAttack, IItemDefense, IIsMagic
+public interface IItem: IItemDefense, IItemAttack
 {
-    public void AddItem();
+    
 }

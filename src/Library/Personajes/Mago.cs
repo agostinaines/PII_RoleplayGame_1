@@ -62,7 +62,7 @@ public class Mago: ICharacter
         {
             if (spells == spell)
             {
-                return spell.Ataque;
+                return spell.Attack;
             }
         }
         return 0;

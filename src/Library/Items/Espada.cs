@@ -1,11 +1,18 @@
 ﻿using Library.Interfaces;
 namespace Library;
 
-public class Espada: IIItemAttack, IItemDefense
+public class Espada: IItemAttack, IItemDefense
 {
     public string Name { get;  set; }
     public int Attack { get;  set; }
     public int Defense { get; set; }
+    
+    public Espada(string name, int attack, int defense)
+    {
+        this.Name = name;
+        this.Attack = attack;
+        this.Defense = defense;
+    }
     
     public bool IsAttack()
     {
@@ -17,12 +24,8 @@ public class Espada: IIItemAttack, IItemDefense
         return true;
     }
     
-    public Espada(string name, int ataque, int defense)
+    public bool IsMagic()
     {
-        this.Name = name;
-        this.Attack = ataque;
-        this.Defense = defense;
+        return false;
     }
-    
-    
 }

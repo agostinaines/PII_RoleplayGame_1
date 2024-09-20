@@ -16,4 +16,9 @@ public class Escudo: IItemDefense
         this.Name = name;
         this.Defense = defense;
     }
+    
+    public bool IsMagic()
+    {
+        return false;
+    }
 }

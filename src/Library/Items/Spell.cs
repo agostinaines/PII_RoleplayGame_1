@@ -1,19 +1,19 @@
 using Library.Interfaces;
 namespace Library;
 
-public class Spell
+public class Spell: IIsMagic
 {
     public string Name { get;  set; }
-    public int Ataque { get;  set; }
+    public int Attack { get;  set; }
     
-    public bool IsAttack()
-    {
-        return true;
-    }
-    
-    public Spell(string name, int Ataque)
+    public Spell(string name, int attack)
     {
         this.Name = name;
-        this.Ataque = Ataque;
+        this.Attack = attack;
+    }
+    
+    public bool IsMagic()
+    {
+        return true;
     }
 }
