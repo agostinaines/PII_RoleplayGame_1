@@ -25,7 +25,7 @@ public class Arco: IIItemAttack, IIsMagic
         this.Attack = ataque;
         this.Defense = defense;
     }
-
+    
     public bool IsMagic()
     {
         return false;

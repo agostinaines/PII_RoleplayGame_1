@@ -6,18 +6,18 @@ namespace Library;
 public class Elfo: ICharacter
 {
     public string Name { get;  set; }
-    public List<IItem> Items { get; set; }
     public int MaxHealth { get; set; }
     public int Health { get; set; }
+    public List<IItem> Items { get; set; }
     public int AttackValue { get;  set; }
-    public int DefenseAttack { get; set; }
+    public int DefenseValue { get; set; }
     
     public Elfo(string name, int life)
     {
         this.Name = name;
-        this.Items = new List<IItem>();
-        this.Health = life;
         this.MaxHealth = life;
+        this.Health = life;
+        this.Items = new List<IItem>();
         this.AttackValue = 0;
     }
     
@@ -30,10 +30,10 @@ public class Elfo: ICharacter
     {
         this.Items.Add(item);
         AttackValue += item.Attack;
-        DefenseAttack += item.Defense;
+        DefenseValue += item.Defense;
     }
 
-    public void RecibirAtaque(int damage)
+    public void ReceiveAttack(int damage)
     {
         if (Health <= 0)
         {
