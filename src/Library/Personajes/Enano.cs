@@ -6,49 +6,46 @@ namespace Library;
 public class Enano: ICharacter
 {
     public string Name { get;  set; }
-    public ArrayList Items { get; set; }
-    public int Life { get; set; }
-    public int MaxLife { get; set; }
-    public int ValorAtaque { get;  set; }
-    public int Armadura { get;  set; }
-    public int DefenseAttack { get; set; }
+    public int MaxHealth { get; set; }
+    public int Health { get; set; }
+    public List<IItem> Items { get; set; }
+    public int AttackValue { get; set; }
+    public int DefenseValue { get; set; }
     
     public Enano(string name, int life)
     {
         this.Name = name;
-        this.Items = new ArrayList();
-        this.Life = life;
-        this.MaxLife = life;
-        this.ValorAtaque = 0;
-        this.Armadura = 30;
-    }
-    
-    public void RecibirAtaque(int damage)
-    {
-        if (Life <= 0)
-        {
-            Console.WriteLine("Atacaste a un muerto :(");
-        }
-        else
-        {
-            Life -= damage - ((damage * Armadura) / 100);
-            if (Life < 0)
-            {
-                Life = 0;
-                Console.WriteLine("Mataste a ese enemigo");
-            }
-        }
+        this.MaxHealth = life;
+        this.Health = life;
+        this.Items = new List<IItem>();
     }
 
-    public void Curar()
+    public void Cure()
     {
-        Life = MaxLife;
+        Health = MaxHealth;
     }
     
     public void AddItem(IItem item)
     {
         this.Items.Add(item);
-        ValorAtaque += item.Attack;
-        DefenseAttack += item.Defense;
+        AttackValue += item.Attack;
+        DefenseValue += item.Defense;
+    }
+    
+    public void ReceiveAttack(int damage)
+    {
+        if (Health <= 0)
+        {
+            Console.WriteLine("Atacaste a un muerto :(");
+        }
+        else
+        {
+            Health -= damage - ((damage / 10));
+            if (Health < 0)
+            {
+                Health = 0;
+                Console.WriteLine("Mataste a ese enemigo");
+            }
+        }
     }
 }
