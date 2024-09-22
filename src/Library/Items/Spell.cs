@@ -1,5 +1,5 @@
 using Library.Interfaces;
-namespace Library;
+namespace Library.Items;
 
 public class Spell: IIsMagic
 {

@@ -1,11 +1,12 @@
-﻿using Library;
-using Library.Interfaces;
+﻿using Library.Interfaces;
+using Library.Items;
+using Library.Personajes;
 
 public class Program
 {
     public static void Main()
     {
-        List<IIsMagic> SpellBook = new List<IIsMagic>();
+        List<Spell> spellBook = new List<Spell>();
         
         Console.WriteLine("¡Bienvenidos a la Tierra Media! \n");
 
@@ -153,6 +154,5 @@ public class Program
         // Saruman usa un hechizo contra Galadriel
         galadriel.ReceiveAttack(saruman.UsarSpell(tornado));
         Console.WriteLine($"La vida de Galadriel es de {galadriel.Health}\n");
-
     }
 }

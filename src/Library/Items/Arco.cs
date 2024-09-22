@@ -1,16 +1,17 @@
 ﻿using Library.Interfaces;
-namespace Library;
 
-public class Arco: IItem
+namespace Library.Items;
+
+public class Arco: IItem, IIsMagic
 {
     public string Name { get;  set; }
     public int Attack { get;  set; }
     public int Defense { get; set; } = 0;
     
-    public Arco(string name, int ataque)
+    public Arco(string name, int attack)
     {
         this.Name = name;
-        this.Attack = ataque;
+        this.Attack = attack;
     }
 
     public bool IsAttack()
@@ -21,11 +22,6 @@ public class Arco: IItem
     public bool IsDefense()
     {
         return false;
-    }
-
-    public void AddItem()
-    {
-        
     }
     
     public bool IsMagic()

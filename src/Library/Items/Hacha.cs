@@ -2,24 +2,24 @@
 
 namespace Library.Items;
 
-public class Armadura: IItem, IIsMagic
+public class Hacha: IItem, IIsMagic
 {
     public string Name { get;  set; }
-    public int Defense { get; set; }
-    public int Attack { get; set; } = 0;
+    public int Attack { get;  set; }
+    public int Defense { get; set; } = 0;
     
-    public Armadura(string name, int defense)
+    public Hacha(string name, int ataque)
     {
         this.Name = name;
-        this.Defense = defense;
+        this.Attack = ataque;
     }
 
-    public bool IsDefense()
+    public bool IsAttack()
     {
         return true;
     }
     
-    public bool IsAttack()
+    public bool IsDefense()
     {
         return false;
     }
@@ -28,4 +28,5 @@ public class Armadura: IItem, IIsMagic
     {
         return false;
     }
+
 }

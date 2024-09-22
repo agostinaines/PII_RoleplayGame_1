@@ -1,6 +1,7 @@
-using Library;
+using Library.Items;
+using Library.Personajes;
 
-//Test de Pilar
+// Test de Pilar
 namespace ProgramTests
 {
     public class TestsMago
@@ -18,46 +19,47 @@ namespace ProgramTests
         public void CrearMago_ValoresInicialesCorrectos()
         {
             // Verificamos que los valores iniciales son los esperados
-            Assert.AreEqual("Gandalf", mago.Name);
-            Assert.AreEqual(100, mago.Life);
-            Assert.AreEqual(100, mago.MaxLife);
-            Assert.AreEqual(0, mago.ValorAtaque);
-            Assert.AreEqual(0, mago.Items.Count);
-            Assert.AreEqual(0, mago.Spells.Count);
+            Assert.That(mago.Name, Is.EqualTo("Gandalf"));
+            Assert.That(mago.Health, Is.EqualTo(100));
+            Assert.That(mago.MaxHealth, Is.EqualTo(100));
+            Assert.That(mago.AttackValue, Is.EqualTo(0));
+            Assert.That(mago.Items.Count, Is.EqualTo(0));
+            Assert.That(mago.Spells.Count, Is.EqualTo(0));
         }
 
         [Test]
         public void RecibirAtaque_ReduceVida()
         {
-            mago.RecibirAtaque(40);
-            Assert.AreEqual(60, mago.Life);
+            mago.ReceiveAttack(40);
+            Assert.That(mago.Health, Is.EqualTo(60));
         }
 
         [Test]
         public void RecibirAtaque_NoBajaDeCero()
         {
-            mago.RecibirAtaque(150);
-            Assert.AreEqual(0, mago.Life);
+            mago.ReceiveAttack(150);
+            Assert.That(mago.Health, Is.EqualTo(0));
         }
 
         [Test]
         public void Curar_RestauraVidaAlMaximo()
         {
-            mago.RecibirAtaque(50);  // Recibe daño
-            mago.Curar();  // Curar restaura la vida al máximo
-            Assert.AreEqual(100, mago.Life);
+            mago.ReceiveAttack(50);  // Recibe daño
+            mago.Cure();  // Curar restaura la vida al máximo
+            Assert.That(mago.Health, Is.EqualTo(100));
         }
 
         [Test]
         public void AgregarItem_AumentaValorAtaque()
         {
             // Creamos un item de prueba
-            Item varitaMagica = new Item("Varita Mágica", 20);
-            mago.AddItem(varitaMagica);
+            Espada espadaGlamdring = new Espada("Glamdring", 20, 15);
+            mago.AddItem(espadaGlamdring);
 
             // Verificamos que el valor de ataque aumenta
-            Assert.AreEqual(20, mago.ValorAtaque);
-            Assert.AreEqual(1, mago.Items.Count);
+            Assert.That(mago.AttackValue, Is.EqualTo(20));
+            Assert.That(mago.DefenseValue, Is.EqualTo(15));
+            Assert.That(mago.Items.Count, Is.EqualTo(1));
         }
 
         [Test]
@@ -67,8 +69,9 @@ namespace ProgramTests
             Spell bolaDeFuego = new Spell("Bola de Fuego", 50);
             mago.AddSpell(bolaDeFuego);
 
-            // Verificamos que el hechizo se agregó correctamente
-            Assert.AreEqual(1, mago.Spells.Count);
+            // Verificamos que el hechizo se agregó correctamente y que aumenta el vaor de ataque
+            Assert.That(mago.Spells.Count, Is.EqualTo(1));
+            Assert.That(mago.AttackValue, Is.EqualTo(70));
         }
 
         [Test]
@@ -80,7 +83,7 @@ namespace ProgramTests
 
             // Verificamos que el mago puede usar el hechizo "Rayo"
             int ataque = mago.UsarSpell(rayo);
-            Assert.AreEqual(40, ataque);
+            Assert.That(ataque, Is.EqualTo(40));
         }
 
         [Test]
@@ -91,7 +94,7 @@ namespace ProgramTests
 
             // Intentamos usar un hechizo que no está en la lista de hechizos
             int ataque = mago.UsarSpell(escudoMagico);
-            Assert.AreEqual(0, ataque);
+            Assert.That(ataque, Is.EqualTo(0));
         }
 
         [Test]
@@ -106,22 +109,22 @@ namespace ProgramTests
 
             // Verificamos que puede lanzar "Bola de Fuego"
             int ataqueBolaDeFuego = mago.UsarSpell(bolaDeFuego);
-            Assert.AreEqual(50, ataqueBolaDeFuego);
+            Assert.That(ataqueBolaDeFuego, Is.EqualTo(50));
 
             // Verificamos que no puede lanzar "Rayo" (no lo tiene)
             int ataqueRayo = mago.UsarSpell(rayo);
-            Assert.AreEqual(0, ataqueRayo);
+            Assert.That(ataqueRayo, Is.EqualTo(0));
         }
 
         [Test]
         public void RecibirAtaque_AEnemigoMuerto_NoCambiaVida()
         {
             // Reducimos la vida a cero
-            mago.RecibirAtaque(100);
-            mago.RecibirAtaque(30);  // Intentamos atacarlo nuevamente
+            mago.ReceiveAttack(100);
+            mago.ReceiveAttack(30);  // Intentamos atacarlo nuevamente
 
             // Verificamos que la vida no cambia
-            Assert.AreEqual(0, mago.Life);
+            Assert.That(mago.Health, Is.EqualTo(0));
         }
     }
 }

@@ -1,7 +1,6 @@
-using System.Collections;
 using Library.Interfaces;
 
-namespace Library;
+namespace Library.Personajes;
 
 public class Enano: ICharacter
 {

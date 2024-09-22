@@ -1,6 +1,7 @@
-using Library;
+using Library.Items;
+using Library.Personajes;
 
-//Test de Agostina
+// Test de Agostina
 namespace ProgramTests
 {
     public class TestsElfo
@@ -18,56 +19,56 @@ namespace ProgramTests
         public void CrearElfo_ValoresInicialesCorrectos()
         {
             // Verificamos que los valores iniciales son los esperados
-            Assert.AreEqual("Legolas", elfo.Name);
-            Assert.AreEqual(100, elfo.Life);
-            Assert.AreEqual(100, elfo.MaxLife);
-            Assert.AreEqual(0, elfo.ValorAtaque);
-            Assert.AreEqual(0, elfo.Items.Count);
+            Assert.That(elfo.Name, Is.EqualTo("Legolas"));
+            Assert.That(elfo.Health, Is.EqualTo(100));
+            Assert.That(elfo.MaxHealth, Is.EqualTo(100));
+            Assert.That(elfo.AttackValue, Is.EqualTo(0));
+            Assert.That(elfo.Items.Count, Is.EqualTo(0));
         }
 
         [Test]
         public void RecibirAtaque_ReduceVida()
         {
-            elfo.RecibirAtaque(30);
-            Assert.AreEqual(70, elfo.Life);
+            elfo.ReceiveAttack(30);
+            Assert.That(elfo.Health, Is.EqualTo(70));
         }
 
         [Test]
         public void RecibirAtaque_NoBajaDeCero()
         {
-            elfo.RecibirAtaque(150);
-            Assert.AreEqual(0, elfo.Life);
+            elfo.ReceiveAttack(150);
+            Assert.That(elfo.Health, Is.EqualTo(0));
         }
 
         [Test]
         public void Curar_RestauraVidaAlMaximo()
         {
-            elfo.RecibirAtaque(50);
-            elfo.Curar(); // Curar sin parámetro, restaura la vida al máximo
-            Assert.AreEqual(100, elfo.Life);
+            elfo.ReceiveAttack(50);
+            elfo.Cure(); // Curar restaura la vida al máximo
+            Assert.That(elfo.Health, Is.EqualTo(100));
         }
 
         [Test]
         public void AgregarItem_AumentaValorAtaque()
         {
             // Creamos un item de prueba
-            Item revolverRemington = new Item("Revolver Remington", 35);
-            elfo.AddItem(revolverRemington);
+            Arco arcoDeGaladhrim = new Arco("Arco de Galadhrim", 35);
+            elfo.AddItem(arcoDeGaladhrim);
 
             // Verificamos que el valor de ataque aumenta
-            Assert.AreEqual(35, elfo.ValorAtaque);
-            Assert.AreEqual(1, elfo.Items.Count);
+            Assert.That(elfo.AttackValue, Is.EqualTo(35));
+            Assert.That(elfo.Items.Count, Is.EqualTo(1));
         }
 
         [Test]
         public void RecibirAtaque_AEnemigoMuerto_NoCambiaVida()
         {
             // Reducimos la vida a cero
-            elfo.RecibirAtaque(100);
-            elfo.RecibirAtaque(30);
+            elfo.ReceiveAttack(100);
+            elfo.ReceiveAttack(30);
 
             // Verificamos que la vida no cambia
-            Assert.AreEqual(0, elfo.Life);
+            Assert.That(elfo.Health, Is.EqualTo(0));
         }
     }
 }

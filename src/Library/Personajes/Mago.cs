@@ -1,7 +1,7 @@
-using System.Collections;
+using Library.Items;
 using Library.Interfaces;
 
-namespace Library;
+namespace Library.Personajes;
 
 public class Mago: ICharacter
 {

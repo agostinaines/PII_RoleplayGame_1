@@ -1,8 +1,8 @@
 ﻿using Library.Interfaces;
 
-namespace Library;
+namespace Library.Items;
 
-public class Espada: IItem
+public class Espada: IItem, IIsMagic
 {
     public string Name { get;  set; }
     public int Attack { get;  set; }
