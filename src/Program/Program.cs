@@ -11,8 +11,8 @@ public class Program
         // PRUEBAS ACA
 
          // Crear objetos
-        Espada espadaDragon = new Espada("Espada del Dragón", 30, 5);
-        Escudo escudoMithril = new Escudo("Escudo de Mithril", 20);
+         Espada espada = new Espada("Espada de Elfo", 15, 5);
+         Escudo escudo = new Escudo("Escudo de Roble", 10);
 
         // Crear hechizos
         Spell bolaFuego = new Spell("Bola de Fuego", 50);
@@ -23,16 +23,16 @@ public class Program
         Elfo legolas = new Elfo("Legolas", 150);
 
         // Añadir objetos al mago Gandalf
-        gandalf.AddItem(espadaDragon);
-        gandalf.AddItem(escudoMithril);
+        gandalf.AddItem(espada);
+        gandalf.AddItem(escudo);
 
         // Añadir hechizos al mago Gandalf
         gandalf.AddSpell(bolaFuego);
         gandalf.AddSpell(cura);
 
         // Añadir objetos al elfo Legolas
-        legolas.AddItem(espadaDragon);  // Compartiendo la misma espada para ilustrar
-        legolas.AddItem(escudoMithril); // Compartiendo el mismo escudo para ilustrar
+        legolas.AddItem(espada);  // Compartiendo la misma espada para ilustrar
+        legolas.AddItem(escudo); // Compartiendo el mismo escudo para ilustrar
 
         // Mostrar la vida inicial de los personajes
         Console.WriteLine($"La vida de Gandalf es de {gandalf.Health}");
@@ -172,7 +172,7 @@ public class Program
         // Gandalf usa un spell contra Elfo Navideño
         elfoNav.RecibirAtaque(gandalf.UsarSpell(absorcion));
         Console.WriteLine("La vida del Elfo Navideño es de " + elfoNav.Life + "\n");
-
+        
 
         // PERSONAJES AGOSTINA
         Elfo galadriel = new Elfo("Galadriel", 160);

@@ -1,7 +1,8 @@
 ﻿using Library.Interfaces;
+
 namespace Library;
 
-public class Espada: IItemAttack, IItemDefense
+public class Espada: IItem
 {
     public string Name { get;  set; }
     public int Attack { get;  set; }
