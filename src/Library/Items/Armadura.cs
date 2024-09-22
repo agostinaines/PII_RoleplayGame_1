@@ -1,14 +1,20 @@
 ﻿using Library.Interfaces;
 namespace Library;
 
-public class Armadura: IItemDefense
+public class Armadura: IItem
 {
     public string Name { get;  set; }
     public int Defense { get; set; }
+    public int Attack { get; set; } = 0;
 
     public bool IsDefense()
     {
         return true;
+    }
+    
+    public bool IsAttack()
+    {
+        return false;
     }
     
     public Armadura(string name, int defense)
