@@ -8,6 +8,60 @@ public class Program
         List<IIsMagic> SpellBook = new List<IIsMagic>();
         
         Console.WriteLine("¡Bienvenidos a la Tierra Media! \n");
+        // PRUEBAS ACA
+
+         // Crear objetos
+        Espada espadaDragon = new Espada("Espada del Dragón", 30, 5);
+        Escudo escudoMithril = new Escudo("Escudo de Mithril", 20);
+
+        // Crear hechizos
+        Spell bolaFuego = new Spell("Bola de Fuego", 50);
+        Spell cura = new Spell("Curación Mágica", 30);
+
+        // Crear personajes
+        Mago gandalf = new Mago("Gandalf", 300);
+        Elfo legolas = new Elfo("Legolas", 150);
+
+        // Añadir objetos al mago Gandalf
+        gandalf.AddItem(espadaDragon);
+        gandalf.AddItem(escudoMithril);
+
+        // Añadir hechizos al mago Gandalf
+        gandalf.AddSpell(bolaFuego);
+        gandalf.AddSpell(cura);
+
+        // Añadir objetos al elfo Legolas
+        legolas.AddItem(espadaDragon);  // Compartiendo la misma espada para ilustrar
+        legolas.AddItem(escudoMithril); // Compartiendo el mismo escudo para ilustrar
+
+        // Mostrar la vida inicial de los personajes
+        Console.WriteLine($"La vida de Gandalf es de {gandalf.Health}");
+        Console.WriteLine($"El valor de ataque de Gandalf es de {gandalf.AttackValue}");
+        Console.WriteLine($"La vida de Legolas es de {legolas.Health}");
+        Console.WriteLine($"El valor de ataque de Legolas es de {legolas.AttackValue}");
+
+        // Gandalf ataca a Legolas usando un hechizo
+        legolas.ReceiveAttack(gandalf.UsarSpell(bolaFuego));
+        Console.WriteLine($"La vida de Legolas después de recibir el ataque de Gandalf es de {legolas.Health}");
+
+        // Legolas se cura
+        legolas.Cure();
+        Console.WriteLine($"La vida de Legolas después de curarse es de {legolas.Health}");
+
+        // Legolas ataca a Gandalf usando ataque físico
+        gandalf.ReceiveAttack(legolas.AttackValue);
+        Console.WriteLine($"La vida de Gandalf después de recibir el ataque de Legolas es de {gandalf.Health}");
+    
+
+
+
+
+
+
+
+
+
+
         // Items
 
         // Items Luis
@@ -28,7 +82,7 @@ public class Program
         Item morgul = new Item("Morgul", 35);
         Item sting = new Item("Sting", 45);
         Item anilloUnico = new Item("Anillo Único", 250);
-        */
+        
 
         // Spells
 
@@ -149,8 +203,9 @@ public class Program
         galadriel.RecibirAtaque(saruman.UsarSpell(tornado));
         Console.WriteLine("La vida de Galdriel es de " + galadriel.Life + "\n");
         */
-
+        /*
         ICharacter veigar = new Mago("Veigar", 100);
         ICharacter malzahar = new Mago("Malzahar", 100);
+        */
     }
 }
