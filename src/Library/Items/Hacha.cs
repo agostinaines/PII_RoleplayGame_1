@@ -8,6 +8,9 @@ public class Hacha: IItem, IIsMagic
     public int Attack { get;  set; }
     public int Defense { get; set; } = 0;
     
+    public bool IsMagic { get; set; }
+
+    
     public Hacha(string name, int ataque)
     {
         this.Name = name;
@@ -23,10 +26,4 @@ public class Hacha: IItem, IIsMagic
     {
         return false;
     }
-    
-    public bool IsMagic()
-    {
-        return false;
-    }
-
 }

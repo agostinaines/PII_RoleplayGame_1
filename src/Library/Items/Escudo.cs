@@ -8,6 +8,9 @@ public class Escudo: IItem, IIsMagic
     public int Defense { get; set; }
     public int Attack { get; set; } = 0;
     
+    public bool IsMagic { get; set; }
+
+    
     public Escudo(string name, int defense)
     {
         this.Name = name;
@@ -22,10 +25,5 @@ public class Escudo: IItem, IIsMagic
     public bool IsAttack()
     {
         return false;  // Indica que no es un objeto de ataque.
-    }
-    
-    public bool IsMagic()
-    {
-        return false;
     }
 }

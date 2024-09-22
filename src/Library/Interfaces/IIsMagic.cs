@@ -2,5 +2,5 @@
 
 public interface IIsMagic
 {
-    public bool IsMagic();
+    public bool IsMagic { get; set; }
 }

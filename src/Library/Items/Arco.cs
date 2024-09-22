@@ -8,6 +8,8 @@ public class Arco: IItem, IIsMagic
     public int Attack { get;  set; }
     public int Defense { get; set; } = 0;
     
+    public bool IsMagic { get; set; }
+    
     public Arco(string name, int attack)
     {
         this.Name = name;
@@ -20,11 +22,6 @@ public class Arco: IItem, IIsMagic
     }
     
     public bool IsDefense()
-    {
-        return false;
-    }
-    
-    public bool IsMagic()
     {
         return false;
     }

@@ -1,7 +1,7 @@
 using Library.Interfaces;
 namespace Library.Items;
 
-public class Spell: IIsMagic
+public class Spell
 {
     public string Name { get;  set; }
     public int Attack { get;  set; }
@@ -10,10 +10,5 @@ public class Spell: IIsMagic
     {
         this.Name = name;
         this.Attack = attack;
-    }
-    
-    public bool IsMagic()
-    {
-        return true;
     }
 }

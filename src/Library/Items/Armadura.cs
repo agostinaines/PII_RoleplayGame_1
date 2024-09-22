@@ -8,6 +8,8 @@ public class Armadura: IItem, IIsMagic
     public int Defense { get; set; }
     public int Attack { get; set; } = 0;
     
+    public bool IsMagic { get; set; }
+    
     public Armadura(string name, int defense)
     {
         this.Name = name;
@@ -20,11 +22,6 @@ public class Armadura: IItem, IIsMagic
     }
     
     public bool IsAttack()
-    {
-        return false;
-    }
-    
-    public bool IsMagic()
     {
         return false;
     }
