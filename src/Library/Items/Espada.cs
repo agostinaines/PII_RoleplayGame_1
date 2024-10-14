@@ -2,29 +2,19 @@
 
 namespace Library.Items;
 
-public class Espada: IItem, IIsMagic
+public class Espada: ItemBase, IIsMagic
 {
-    public string Name { get;  set; }
-    public int Attack { get;  set; }
-    public int Defense { get; set; }
-    
-    public bool IsMagic { get; set; }
-
-    
-    public Espada(string name, int attack, int defense)
+    public Espada(string name, int attack, int defense) : base(name, attack, defense)
     {
-        this.Name = name;
-        this.Attack = attack;
-        this.Defense = defense;
     }
     
-    public bool IsAttack()
+    public override bool IsDefense()
     {
         return true;
     }
-
-    public bool IsDefense()
+    
+    public override bool IsAttack()
     {
-        return true;
+        return false;
     }
 }

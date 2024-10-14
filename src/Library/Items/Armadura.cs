@@ -2,26 +2,19 @@
 
 namespace Library.Items;
 
-public class Armadura: IItem, IIsMagic
+public class Armadura: ItemBase, IIsMagic
 {
-    public string Name { get;  set; }
-    public int Defense { get; set; }
-    public int Attack { get; set; } = 0;
     
-    public bool IsMagic { get; set; }
-    
-    public Armadura(string name, int defense)
+    public Armadura(string name, int defense) : base(name, 0, defense)
     {
-        this.Name = name;
-        this.Defense = defense;
     }
 
-    public bool IsDefense()
+    public override bool IsDefense()
     {
         return true;
     }
     
-    public bool IsAttack()
+    public override bool IsAttack()
     {
         return false;
     }

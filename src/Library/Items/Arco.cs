@@ -2,26 +2,19 @@
 
 namespace Library.Items;
 
-public class Arco: IItem, IIsMagic
+public class Arco: ItemBase, IIsMagic
 {
-    public string Name { get;  set; }
-    public int Attack { get;  set; }
-    public int Defense { get; set; } = 0;
     
-    public bool IsMagic { get; set; }
-    
-    public Arco(string name, int attack)
+    public Arco(string name, int attack) : base(name, attack, 0)
     {
-        this.Name = name;
-        this.Attack = attack;
     }
 
-    public bool IsAttack()
+    public override bool IsAttack()
     {
         return true;
     }
     
-    public bool IsDefense()
+    public override bool IsDefense()
     {
         return false;
     }

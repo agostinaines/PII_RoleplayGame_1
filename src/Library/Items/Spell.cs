@@ -1,14 +1,21 @@
 using Library.Interfaces;
+
 namespace Library.Items;
 
-public class Spell
+public class Spell : ItemBase
 {
-    public string Name { get;  set; }
-    public int Attack { get;  set; }
-    
-    public Spell(string name, int attack)
+    public Spell(string name, int attack) 
+        : base(name, attack, 0) 
     {
-        this.Name = name;
-        this.Attack = attack;
+    }
+
+    public override bool IsAttack()
+    {
+        return true; 
+    }
+
+    public override bool IsDefense()
+    {
+        return false; 
     }
 }
