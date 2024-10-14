@@ -10,5 +10,6 @@ public interface ICharacter
     public int DefenseValue { get; set; }
     public void Cure();
     public void AddItem(IItem item);
-    public void ReceiveAttack(int power);
+    
+    // elimine ReceiveAttack de aca porque hice uno para cada personaje 
 }
