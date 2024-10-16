@@ -2,12 +2,13 @@
 
 namespace Library.Items;
 
-public class Espada: ItemBase, IIsMagic
+public class Armor: BaseItem, IIsMagic
 {
-    public Espada(string name, int attack, int defense) : base(name, attack, defense)
+    
+    public Armor(string name, int defense) : base(name, 0, defense)
     {
     }
-    
+
     public override bool IsDefense()
     {
         return true;
@@ -15,6 +16,6 @@ public class Espada: ItemBase, IIsMagic
     
     public override bool IsAttack()
     {
-        return true;
+        return false;
     }
 }

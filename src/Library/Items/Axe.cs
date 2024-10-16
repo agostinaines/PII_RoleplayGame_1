@@ -2,9 +2,9 @@
 
 namespace Library.Items;
 
-public class Hacha: ItemBase, IIsMagic
+public class Axe: BaseItem, IIsMagic
 {
-    public Hacha(string name, int attack) : base(name, attack, 0)
+    public Axe(string name, int attack) : base(name, attack, 0)
     {
     }
 

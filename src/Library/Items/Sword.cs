@@ -2,13 +2,12 @@
 
 namespace Library.Items;
 
-public class Armadura: ItemBase, IIsMagic
+public class Sword: BaseItem, IIsMagic
 {
-    
-    public Armadura(string name, int defense) : base(name, 0, defense)
+    public Sword(string name, int attack, int defense) : base(name, attack, defense)
     {
     }
-
+    
     public override bool IsDefense()
     {
         return true;
@@ -16,6 +15,6 @@ public class Armadura: ItemBase, IIsMagic
     
     public override bool IsAttack()
     {
-        return false;
+        return true;
     }
 }
