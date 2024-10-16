@@ -2,7 +2,7 @@ using Library.Interfaces;
 
 namespace Library.Items;
 
-public class Spell : ItemBase
+public class Spell : BaseItem
 {
     public Spell(string name, int attack) 
         : base(name, attack, 0) 

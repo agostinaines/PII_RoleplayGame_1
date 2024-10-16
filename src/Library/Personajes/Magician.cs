@@ -2,11 +2,11 @@ using Library.Interfaces;
 using Library.Items;
 namespace Library.Personajes;
 
-public class Mago : PersonajeBase
+public class Magician : BaseCharacter
 {
     public List<Spell> Spells { get; set; }
 
-    public Mago(string name, int life) : base(name,  life)
+    public Magician(string name, int life) : base(name,  life)
     {
         this.Spells = new List<Spell>();
     }

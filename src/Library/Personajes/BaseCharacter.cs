@@ -1,7 +1,7 @@
 using Library.Interfaces;
 namespace Library.Personajes;
 
-public abstract class PersonajeBase : ICharacter
+public abstract class BaseCharacter : ICharacter
 {
     public string Name { get; set; }
     public int MaxHealth { get; set; }
@@ -10,7 +10,7 @@ public abstract class PersonajeBase : ICharacter
     public int AttackValue { get; set; }
     public int DefenseValue { get; set; }
 
-    protected PersonajeBase(string name, int life)
+    protected BaseCharacter(string name, int life)
     {
         this.Name = name;
         this.MaxHealth = life;

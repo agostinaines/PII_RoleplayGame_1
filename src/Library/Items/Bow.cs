@@ -2,10 +2,10 @@
 
 namespace Library.Items;
 
-public class Arco: ItemBase, IIsMagic
+public class Bow: BaseItem, IIsMagic
 {
     
-    public Arco(string name, int attack) : base(name, attack, 0)
+    public Bow(string name, int attack) : base(name, attack, 0)
     {
     }
 

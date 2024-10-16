@@ -2,9 +2,9 @@
 
 namespace Library.Items;
 
-public class Escudo: ItemBase, IIsMagic
+public class Shield: BaseItem, IIsMagic
 {
-    public Escudo(string name, int defense) : base(name, 0, defense)
+    public Shield(string name, int defense) : base(name, 0, defense)
     {
     }
 
