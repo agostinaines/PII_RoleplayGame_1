@@ -15,6 +15,6 @@ public class Espada: ItemBase, IIsMagic
     
     public override bool IsAttack()
     {
-        return false;
+        return true;
     }
 }

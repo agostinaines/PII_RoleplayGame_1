@@ -10,11 +10,11 @@ public class Hacha: ItemBase, IIsMagic
 
     public override bool IsDefense()
     {
-        return true;
+        return false;
     }
     
     public override bool IsAttack()
     {
-        return false;
+        return true;
     }
 }

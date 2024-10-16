@@ -30,4 +30,5 @@ public abstract class PersonajeBase : ICharacter
         DefenseValue += item.Defense;
     }
     
+    
 }
