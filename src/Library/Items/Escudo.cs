@@ -2,28 +2,19 @@
 
 namespace Library.Items;
 
-public class Escudo: IItem, IIsMagic
+public class Escudo: ItemBase, IIsMagic
 {
-    public string Name { get;  set; }
-    public int Defense { get; set; }
-    public int Attack { get; set; } = 0;
-    
-    public bool IsMagic { get; set; }
-
-    
-    public Escudo(string name, int defense)
+    public Escudo(string name, int defense) : base(name, 0, defense)
     {
-        this.Name = name;
-        this.Defense = defense;
     }
 
-    public bool IsDefense()
+    public override bool IsDefense()
     {
         return true;
     }
     
-    public bool IsAttack()
+    public override bool IsAttack()
     {
-        return false;  // Indica que no es un objeto de ataque.
+        return false;
     }
 }

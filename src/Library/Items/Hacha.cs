@@ -2,28 +2,19 @@
 
 namespace Library.Items;
 
-public class Hacha: IItem, IIsMagic
+public class Hacha: ItemBase, IIsMagic
 {
-    public string Name { get;  set; }
-    public int Attack { get;  set; }
-    public int Defense { get; set; } = 0;
-    
-    public bool IsMagic { get; set; }
-
-    
-    public Hacha(string name, int ataque)
+    public Hacha(string name, int attack) : base(name, attack, 0)
     {
-        this.Name = name;
-        this.Attack = ataque;
     }
 
-    public bool IsAttack()
-    {
-        return true;
-    }
-    
-    public bool IsDefense()
+    public override bool IsDefense()
     {
         return false;
+    }
+    
+    public override bool IsAttack()
+    {
+        return true;
     }
 }
