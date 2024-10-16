@@ -1,4 +1,5 @@
-﻿using Library.Interfaces;
+﻿using Library;
+using Library.Interfaces;
 using Library.Items;
 using Library.Personajes;
 
@@ -155,5 +156,49 @@ public class Program
         // Saruman usa un hechizo contra Galadriel
         galadriel.ReceiveAttack(saruman.UsarSpell(tornado));
         Console.WriteLine($"La vida de Galadriel es de {galadriel.Health}\n");
+        
+        // ----------------------------enemigos------------------------------ //
+        
+        // Creacion de items
+        // ----ESPADAS----
+        IItem espadaOxidada = new Espada("Espada Oxidada", 15, 0);
+        IItem espadaRustica = new Espada("Espada Rustica", 25, 0);
+        IItem espadaMadera = new Espada("Espada de Madera", 20, 0);
+        IItem espadaLarga = new Espada("Espada Larga", 40, 0);
+        //----ARMADURA----
+        IItem armaduraCuero = new Armadura("Armadura de cuero", 10);
+        IItem armaduraVendas = new Armadura("Vendaje de Momia", 10);
+        IItem armaduraDesgastada = new Armadura("Armadura Desgastada", 8);
+        //----ESCUDOS----
+        IItem escudoPiel = new Escudo("Escudo de Piel", 15);
+        IItem escudoEscamas = new Escudo("Escudo de Escamas", 30);
+        IItem escudoHierro = new Escudo("Escudo de Hierro", 25);
+        //----HACHAS----
+        IItem hachaGuerra = new Hacha("Hacha de Guerra", 50);
+        IItem hachaMadera = new Hacha("Hacha de Madera", 20);
+        
+        // Creacion de personajes + items
+        Orco orco1 = new Orco("Gruk", 150,15);
+        orco1.AddItem(espadaRustica);
+        orco1.AddItem(armaduraCuero);
+        
+        Momia momia1 = new Momia("Mummy", 100,10);
+        momia1.AddItem(espadaOxidada);
+        momia1.AddItem(armaduraVendas);
+        
+        Dragon dragon1 = new Dragon("Draco", 300,30);
+        dragon1.AddItem(hachaGuerra);
+        dragon1.AddItem(escudoEscamas);
+       
+        
+        
+        // Ejemplo de combate 
+        Console.WriteLine($"Salud de {orco1.Name} antes del ataque: {orco1.Health}");
+        Console.WriteLine($"Valor de ataque de {saruman.Name} es {saruman.AttackValue}");
+        Combat.HeroAttacksEnemy(saruman, orco1);
+        Console.WriteLine($"Los puntos de victoria de {saruman.Name}, ahora son {saruman.VictoryPoints}");
+        
     }
+    
+    
 }

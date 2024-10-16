@@ -5,7 +5,7 @@ namespace Library.Personajes;
 public class Enano: PersonajeBase
 {
 
-    public Enano(string name, int life) :  base(name, life)
+    public Enano(string name, int life) :  base(name, life,0)
     {
     }
 
@@ -26,6 +26,14 @@ public class Enano: PersonajeBase
                 Console.WriteLine("Mataste a ese enemigo");
             }
         }
+    }
+    public override bool IsHero()
+    {
+        return true;
+    }
+    public override bool IsEnemy()
+    {
+        return false;
     }
     
 }

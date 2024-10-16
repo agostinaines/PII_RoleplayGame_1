@@ -1,11 +1,10 @@
-﻿using Library.Interfaces;
-
 namespace Library.Personajes;
 
-public class Elfo: PersonajeBase
+public class Momia: PersonajeBase
 {
-    public Elfo(string name, int life) :  base(name,  life,0)
+    public Momia(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
     {
+        this.VictoryPoints = victoryPoints;
     }
     
     public override void ReceiveAttack(int damage)
@@ -16,8 +15,9 @@ public class Elfo: PersonajeBase
         }
         else
         {
-            // Daño directo sin modificaciones
-            Health -= damage;
+            // La momia reduce el daño recibido en un 5%
+            int damageReceived = damage - (damage / 20);
+            Health -= damageReceived;
             if (Health < 0)
             {
                 Health = 0;
@@ -28,10 +28,10 @@ public class Elfo: PersonajeBase
 
     public override bool IsHero()
     {
-        return true;
+        return false;
     }
     public override bool IsEnemy()
     {
-        return false;
+        return true;
     }
 }
