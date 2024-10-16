@@ -23,7 +23,7 @@ namespace ProgramTests
             Assert.That(enano.Health, Is.EqualTo(100));
             Assert.That(enano.MaxHealth, Is.EqualTo(100));
             Assert.That(enano.AttackValue, Is.EqualTo(0));
-            Assert.That(enano.DefenseValue, Is.EqualTo(30));
+            Assert.That(enano.DefenseValue, Is.EqualTo(0));
             Assert.That(enano.Items.Count, Is.EqualTo(0));
         }
 
