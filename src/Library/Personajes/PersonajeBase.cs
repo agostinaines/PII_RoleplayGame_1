@@ -16,7 +16,9 @@ public abstract class PersonajeBase : ICharacter
         this.MaxHealth = life;
         this.Health = life;
         this.Items = new List<IItem>();
+
     }
+    
 
     public void Cure()
     {
@@ -30,5 +32,5 @@ public abstract class PersonajeBase : ICharacter
         DefenseValue += item.Defense;
     }
     
-    
+    public abstract void ReceiveAttack(int damage);
 }

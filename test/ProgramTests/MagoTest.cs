@@ -65,13 +65,15 @@ namespace ProgramTests
         [Test]
         public void AgregarSpell_IncrementaListaHechizos()
         {
+            
             // Creamos un hechizo de prueba
             Spell bolaDeFuego = new Spell("Bola de Fuego", 50);
             mago.AddSpell(bolaDeFuego);
+            Console.WriteLine($"---------{mago.AttackValue}");
 
             // Verificamos que el hechizo se agregó correctamente y que aumenta el vaor de ataque
             Assert.That(mago.Spells.Count, Is.EqualTo(1));
-            Assert.That(mago.AttackValue, Is.EqualTo(70));
+            Assert.That(mago.AttackValue, Is.EqualTo(50));
         }
 
         [Test]

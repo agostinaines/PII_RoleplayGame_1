@@ -68,6 +68,7 @@ public class Program
         Mago veigar = new Mago("Veigar", 80);
         veigar.AddItem(baculo);
         veigar.AddSpell(rayo);
+        Console.WriteLine($"-------------{veigar.AttackValue}");
 
         Console.WriteLine($"La vida de Poppy es de {poppy.Health}");
         Console.WriteLine($"El valor de ataque de Teemo es {teemo.AttackValue}");

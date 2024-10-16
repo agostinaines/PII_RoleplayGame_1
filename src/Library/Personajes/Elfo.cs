@@ -4,12 +4,11 @@ namespace Library.Personajes;
 
 public class Elfo: PersonajeBase
 {
-    public Elfo(string name, int life) : base(name, life)
+    public Elfo(string name, int life) :  base(name,  life)
     {
-        this.AttackValue = 0;
     }
     
-    public void ReceiveAttack(int damage)
+    public override void ReceiveAttack(int damage)
     {
         if (Health <= 0)
         {

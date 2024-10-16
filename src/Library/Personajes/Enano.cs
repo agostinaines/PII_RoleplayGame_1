@@ -5,11 +5,11 @@ namespace Library.Personajes;
 public class Enano: PersonajeBase
 {
 
-    public Enano(string name, int life) : base(name, life)
+    public Enano(string name, int life) :  base(name, life)
     {
     }
 
-    public void ReceiveAttack(int damage)
+    public override void ReceiveAttack(int damage)
     {
         if (Health <= 0)
         {
