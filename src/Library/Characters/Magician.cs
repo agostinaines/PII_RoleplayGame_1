@@ -7,7 +7,7 @@ public class Magician : BaseCharacter
 {
     public List<Spell> Spells { get; set; }
 
-    public Magician(string name, int life) : base(name,  life,0)
+    public Magician(string name, int life) : base(name,  life)
     {
         this.Spells = new List<Spell>();
     }
@@ -47,15 +47,5 @@ public class Magician : BaseCharacter
                 Console.WriteLine($"{Name} ha sido derrotado.");
             }
         }
-    }
-
-
-    public override bool IsHero()
-    {
-        return true;
-    }
-    public override bool IsEnemy()
-    {
-        return false;
     }
 }

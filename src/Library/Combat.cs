@@ -1,7 +1,7 @@
 using Library.Characters.AncestralClasses;
 using Library.Interfaces;
 
-
+/*
 namespace Library;
 
 public class Combat 
@@ -18,4 +18,4 @@ public class Combat
         }
     }
     
-}
+}*/

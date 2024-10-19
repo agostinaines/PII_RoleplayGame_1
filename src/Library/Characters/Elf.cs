@@ -4,7 +4,7 @@ namespace Library.Characters;
 
 public class Elf: BaseCharacter
 {
-    public Elf(string name, int life) :  base(name,  life,0)
+    public Elf(string name, int life) :  base(name,  life)
     {
     }
     
@@ -24,14 +24,5 @@ public class Elf: BaseCharacter
                 Console.WriteLine($"{Name} ha sido derrotado.");
             }
         }
-    }
-
-    public override bool IsHero()
-    {
-        return true;
-    }
-    public override bool IsEnemy()
-    {
-        return false;
     }
 }

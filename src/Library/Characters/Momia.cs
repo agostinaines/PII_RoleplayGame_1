@@ -4,9 +4,8 @@ namespace Library.Characters;
 
 public class Momia: BaseCharacter
 {
-    public Momia(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
+    public Momia(string name, int life, int victoryPoints) :  base(name, life)
     {
-        this.VictoryPoints = victoryPoints;
     }
     
     public override void ReceiveAttack(int damage)
@@ -27,13 +26,5 @@ public class Momia: BaseCharacter
             }
         }
     }
-
-    public override bool IsHero()
-    {
-        return false;
-    }
-    public override bool IsEnemy()
-    {
-        return true;
-    }
+    
 }

@@ -12,13 +12,12 @@ public abstract class BaseCharacter : ICharacter
     public int DefenseValue { get; set; }
     public int VictoryPoints { get; set; }
     
-    protected BaseCharacter(string name, int life, int victoryPoints)
+    protected BaseCharacter(string name, int life)
     {
         this.Name = name;
         this.MaxHealth = life;
         this.Health = life;
         this.Items = new List<IItem>();
-        this.VictoryPoints = 0; 
     }
     
     public void Cure()
@@ -32,10 +31,6 @@ public abstract class BaseCharacter : ICharacter
         AttackValue += item.Attack;
         DefenseValue += item.Defense;
     }
-    
-    public abstract bool IsHero();
-    
-    public abstract bool IsEnemy();
     
     public virtual void ReceiveAttack(int damage)
     {
