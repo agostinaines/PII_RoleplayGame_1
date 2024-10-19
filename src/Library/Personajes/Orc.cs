@@ -1,8 +1,8 @@
 namespace Library.Personajes;
 
-public class Orco: PersonajeBase
+public class Orc: PersonajeBase
 {
-    public Orco(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
+    public Orc(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
     {
         this.VictoryPoints = victoryPoints;
     }

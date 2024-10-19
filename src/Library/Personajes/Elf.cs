@@ -2,9 +2,9 @@
 
 namespace Library.Personajes;
 
-public class Elfo: PersonajeBase
+public class Elf: PersonajeBase
 {
-    public Elfo(string name, int life) :  base(name,  life,0)
+    public Elf(string name, int life) :  base(name,  life,0)
     {
     }
     

@@ -161,24 +161,24 @@ public class Program
         
         // Creacion de items
         // ----ESPADAS----
-        IItem espadaOxidada = new Espada("Espada Oxidada", 15, 0);
-        IItem espadaRustica = new Espada("Espada Rustica", 25, 0);
-        IItem espadaMadera = new Espada("Espada de Madera", 20, 0);
-        IItem espadaLarga = new Espada("Espada Larga", 40, 0);
+        IItem espadaOxidada = new Sword("Espada Oxidada", 15, 0);
+        IItem espadaRustica = new Sword("Espada Rustica", 25, 0);
+        IItem espadaMadera = new Sword("Espada de Madera", 20, 0);
+        IItem espadaLarga = new Sword("Espada Larga", 40, 0);
         //----ARMADURA----
-        IItem armaduraCuero = new Armadura("Armadura de cuero", 10);
-        IItem armaduraVendas = new Armadura("Vendaje de Momia", 10);
-        IItem armaduraDesgastada = new Armadura("Armadura Desgastada", 8);
+        IItem armaduraCuero = new Armor("Armadura de cuero", 10);
+        IItem armaduraVendas = new Armor("Vendaje de Momia", 10);
+        IItem armaduraDesgastada = new Armor("Armadura Desgastada", 8);
         //----ESCUDOS----
-        IItem escudoPiel = new Escudo("Escudo de Piel", 15);
-        IItem escudoEscamas = new Escudo("Escudo de Escamas", 30);
-        IItem escudoHierro = new Escudo("Escudo de Hierro", 25);
+        IItem escudoPiel = new Shield("Escudo de Piel", 15);
+        IItem escudoEscamas = new Shield("Escudo de Escamas", 30);
+        IItem escudoHierro = new Shield("Escudo de Hierro", 25);
         //----HACHAS----
-        IItem hachaGuerra = new Hacha("Hacha de Guerra", 50);
-        IItem hachaMadera = new Hacha("Hacha de Madera", 20);
+        IItem hachaGuerra = new Axe("Hacha de Guerra", 50);
+        IItem hachaMadera = new Axe("Hacha de Madera", 20);
         
         // Creacion de personajes + items
-        Orco orco1 = new Orco("Gruk", 150,15);
+        Orc orco1 = new Orc("Gruk", 150,15);
         orco1.AddItem(espadaRustica);
         orco1.AddItem(armaduraCuero);
         

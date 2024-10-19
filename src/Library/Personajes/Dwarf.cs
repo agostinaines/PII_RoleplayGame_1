@@ -2,10 +2,10 @@ using Library.Interfaces;
 
 namespace Library.Personajes;
 
-public class Enano: PersonajeBase
+public class Dwarf: PersonajeBase
 {
 
-    public Enano(string name, int life) :  base(name, life,0)
+    public Dwarf(string name, int life) :  base(name, life,0)
     {
     }
 
