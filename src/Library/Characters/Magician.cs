@@ -1,6 +1,7 @@
-using Library.Interfaces;
+using Library.Characters.AncestralClasses;
 using Library.Items;
-namespace Library.Personajes;
+
+namespace Library.Characters;
 
 public class Magician : BaseCharacter
 {

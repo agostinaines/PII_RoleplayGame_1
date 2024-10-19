@@ -1,8 +1,8 @@
+using Library.Characters.AncestralClasses;
 using Library.Interfaces;
 
 
 namespace Library;
-using Library.Personajes;
 
 public class Combat 
 {

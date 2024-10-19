@@ -1,5 +1,5 @@
+using Library.Characters;
 using Library.Items;
-using Library.Personajes;
 
 // Test de Agostina
 namespace ProgramTests

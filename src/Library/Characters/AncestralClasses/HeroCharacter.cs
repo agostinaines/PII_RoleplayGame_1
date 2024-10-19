@@ -1,4 +1,4 @@
-﻿namespace Library.Personajes;
+﻿namespace Library.Characters.AncestralClasses;
 
 public class HeroCharacter
 {

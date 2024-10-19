@@ -1,6 +1,6 @@
-using Library.Interfaces;
+using Library.Characters.AncestralClasses;
 
-namespace Library.Personajes;
+namespace Library.Characters;
 
 public class Dwarf: BaseCharacter
 {

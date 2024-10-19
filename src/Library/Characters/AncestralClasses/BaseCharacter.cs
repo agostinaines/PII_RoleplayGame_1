@@ -1,5 +1,6 @@
 using Library.Interfaces;
-namespace Library.Personajes;
+
+namespace Library.Characters.AncestralClasses;
 
 public abstract class BaseCharacter : ICharacter
 {

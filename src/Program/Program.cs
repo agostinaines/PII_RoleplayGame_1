@@ -1,7 +1,7 @@
 ﻿using Library;
+using Library.Characters;
 using Library.Interfaces;
 using Library.Items;
-using Library.Personajes;
 
 public class Program
 {

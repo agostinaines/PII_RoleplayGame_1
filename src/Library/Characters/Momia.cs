@@ -1,4 +1,6 @@
-namespace Library.Personajes;
+using Library.Characters.AncestralClasses;
+
+namespace Library.Characters;
 
 public class Momia: BaseCharacter
 {
