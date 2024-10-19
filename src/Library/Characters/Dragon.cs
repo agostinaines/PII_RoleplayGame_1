@@ -1,6 +1,6 @@
 namespace Library.Personajes;
 
-public class Dragon: PersonajeBase
+public class Dragon: BaseCharacter
 {
     public Dragon(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
     {

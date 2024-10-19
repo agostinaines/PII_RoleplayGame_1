@@ -2,7 +2,7 @@ using Library.Interfaces;
 
 namespace Library.Personajes;
 
-public class Dwarf: PersonajeBase
+public class Dwarf: BaseCharacter
 {
 
     public Dwarf(string name, int life) :  base(name, life,0)

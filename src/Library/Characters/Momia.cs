@@ -1,6 +1,6 @@
 namespace Library.Personajes;
 
-public class Momia: PersonajeBase
+public class Momia: BaseCharacter
 {
     public Momia(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
     {

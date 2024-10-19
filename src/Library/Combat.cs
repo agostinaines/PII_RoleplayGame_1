@@ -6,7 +6,7 @@ using Library.Personajes;
 
 public class Combat 
 {
-    public static void HeroAttacksEnemy(PersonajeBase hero, PersonajeBase enemy)
+    public static void HeroAttacksEnemy(BaseCharacter hero, BaseCharacter enemy)
     {
         if (hero.IsHero() && enemy.IsEnemy())
         {

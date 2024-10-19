@@ -2,7 +2,7 @@ using Library.Interfaces;
 using Library.Items;
 namespace Library.Personajes;
 
-public class Magician : PersonajeBase
+public class Magician : BaseCharacter
 {
     public List<Spell> Spells { get; set; }
 
