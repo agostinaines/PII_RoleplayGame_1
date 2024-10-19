@@ -10,8 +10,7 @@ public abstract class PersonajeBase : ICharacter
     public int AttackValue { get; set; }
     public int DefenseValue { get; set; }
     public int VictoryPoints { get; set; }
-
-
+    
     protected PersonajeBase(string name, int life, int victoryPoints)
     {
         this.Name = name;
@@ -21,7 +20,6 @@ public abstract class PersonajeBase : ICharacter
         this.VictoryPoints = 0; 
     }
     
-
     public void Cure()
     {
         Health = MaxHealth;
@@ -33,13 +31,11 @@ public abstract class PersonajeBase : ICharacter
         AttackValue += item.Attack;
         DefenseValue += item.Defense;
     }
-
-
+    
     public abstract bool IsHero();
     
     public abstract bool IsEnemy();
-
-
+    
     public virtual void ReceiveAttack(int damage)
     {
         if (Health <= 0)
@@ -61,5 +57,4 @@ public abstract class PersonajeBase : ICharacter
     {
         VictoryPoints += points;
     }
-
 }
