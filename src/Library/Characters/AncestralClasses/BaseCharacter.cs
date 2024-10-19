@@ -48,9 +48,4 @@ public abstract class BaseCharacter : ICharacter
             }
         }
     }
-
-    public void AddVictoryPoints(int points)
-    {
-        VictoryPoints += points;
-    }
 }
