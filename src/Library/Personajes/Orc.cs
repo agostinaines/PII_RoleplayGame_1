@@ -1,11 +1,10 @@
-﻿using Library.Interfaces;
-
 namespace Library.Personajes;
 
-public class Elf: PersonajeBase
+public class Orc: PersonajeBase
 {
-    public Elf(string name, int life) :  base(name,  life,0)
+    public Orc(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
     {
+        this.VictoryPoints = victoryPoints;
     }
     
     public override void ReceiveAttack(int damage)
@@ -16,7 +15,7 @@ public class Elf: PersonajeBase
         }
         else
         {
-            // Daño directo sin modificaciones
+            // Orco recibe el daño sin reducción
             Health -= damage;
             if (Health < 0)
             {
@@ -26,12 +25,13 @@ public class Elf: PersonajeBase
         }
     }
 
+    
     public override bool IsHero()
     {
-        return true;
+        return false;
     }
     public override bool IsEnemy()
     {
-        return false;
+        return true;
     }
 }

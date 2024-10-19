@@ -1,13 +1,12 @@
-﻿using Library.Interfaces;
-
 namespace Library.Personajes;
 
-public class Elf: PersonajeBase
+public class Dragon: PersonajeBase
 {
-    public Elf(string name, int life) :  base(name,  life,0)
+    public Dragon(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
     {
+        this.VictoryPoints = victoryPoints;
     }
-    
+
     public override void ReceiveAttack(int damage)
     {
         if (Health <= 0)
@@ -16,8 +15,9 @@ public class Elf: PersonajeBase
         }
         else
         {
-            // Daño directo sin modificaciones
-            Health -= damage;
+            // El dragón tiene una alta defensa y reduce el daño recibido en un 20%
+            int damageReceived = damage - (damage / 5);
+            Health -= damageReceived;
             if (Health < 0)
             {
                 Health = 0;
@@ -28,10 +28,10 @@ public class Elf: PersonajeBase
 
     public override bool IsHero()
     {
-        return true;
+        return false;
     }
     public override bool IsEnemy()
     {
-        return false;
-    }
+            return true;
+        }
 }
