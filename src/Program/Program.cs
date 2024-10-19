@@ -195,7 +195,7 @@ public class Program
         // Ejemplo de combate 
         Console.WriteLine($"Salud de {orco1.Name} antes del ataque: {orco1.Health}");
         Console.WriteLine($"Valor de ataque de {saruman.Name} es {saruman.AttackValue}");
-        Combat.HeroAttacksEnemy(saruman, orco1);
+        //Combat.HeroAttacksEnemy(saruman, orco1);
         Console.WriteLine($"Los puntos de victoria de {saruman.Name}, ahora son {saruman.VictoryPoints}");
         
     }
