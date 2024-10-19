@@ -1,12 +1,13 @@
-using Library.Interfaces;
+using Library.Characters.AncestralClasses;
 using Library.Items;
-namespace Library.Personajes;
 
-public class Magician : PersonajeBase
+namespace Library.Characters;
+
+public class Magician : BaseCharacter
 {
     public List<Spell> Spells { get; set; }
 
-    public Magician(string name, int life) : base(name,  life,0)
+    public Magician(string name, int life) : base(name,  life)
     {
         this.Spells = new List<Spell>();
     }
@@ -46,15 +47,5 @@ public class Magician : PersonajeBase
                 Console.WriteLine($"{Name} ha sido derrotado.");
             }
         }
-    }
-
-
-    public override bool IsHero()
-    {
-        return true;
-    }
-    public override bool IsEnemy()
-    {
-        return false;
     }
 }

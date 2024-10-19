@@ -1,11 +1,11 @@
-using Library.Interfaces;
+using Library.Characters.AncestralClasses;
 
-namespace Library.Personajes;
+namespace Library.Characters;
 
-public class Dwarf: PersonajeBase
+public class Dwarf: BaseCharacter
 {
 
-    public Dwarf(string name, int life) :  base(name, life,0)
+    public Dwarf(string name, int life) :  base(name, life)
     {
     }
 
@@ -26,14 +26,6 @@ public class Dwarf: PersonajeBase
                 Console.WriteLine("Mataste a ese enemigo");
             }
         }
-    }
-    public override bool IsHero()
-    {
-        return true;
-    }
-    public override bool IsEnemy()
-    {
-        return false;
     }
     
 }

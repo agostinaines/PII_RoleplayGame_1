@@ -1,6 +1,6 @@
-﻿namespace Library.Personajes;
+﻿namespace Library.Characters.AncestralClasses;
 
-public class EnemyCharacter
+public class EnemyCharacter : BaseCharacter
 {
     
 }

@@ -1,7 +1,8 @@
 using Library.Interfaces;
-namespace Library.Personajes;
 
-public abstract class PersonajeBase : ICharacter
+namespace Library.Characters.AncestralClasses;
+
+public abstract class BaseCharacter : ICharacter
 {
     public string Name { get; set; }
     public int MaxHealth { get; set; }
@@ -11,13 +12,12 @@ public abstract class PersonajeBase : ICharacter
     public int DefenseValue { get; set; }
     public int VictoryPoints { get; set; }
     
-    protected PersonajeBase(string name, int life, int victoryPoints)
+    protected BaseCharacter(string name, int life)
     {
         this.Name = name;
         this.MaxHealth = life;
         this.Health = life;
         this.Items = new List<IItem>();
-        this.VictoryPoints = 0; 
     }
     
     public void Cure()
@@ -31,10 +31,6 @@ public abstract class PersonajeBase : ICharacter
         AttackValue += item.Attack;
         DefenseValue += item.Defense;
     }
-    
-    public abstract bool IsHero();
-    
-    public abstract bool IsEnemy();
     
     public virtual void ReceiveAttack(int damage)
     {
@@ -51,10 +47,5 @@ public abstract class PersonajeBase : ICharacter
                 Console.WriteLine("¡Mataste a tu enemigo!");
             }
         }
-    }
-
-    public void AddVictoryPoints(int points)
-    {
-        VictoryPoints += points;
     }
 }

@@ -1,8 +1,10 @@
-namespace Library.Personajes;
+using Library.Characters.AncestralClasses;
 
-public class Dragon: PersonajeBase
+namespace Library.Characters;
+
+public class Dragon: BaseCharacter
 {
-    public Dragon(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
+    public Dragon(string name, int life, int victoryPoints) :  base(name, life)
     {
         this.VictoryPoints = victoryPoints;
     }
@@ -25,13 +27,4 @@ public class Dragon: PersonajeBase
             }
         }
     }
-
-    public override bool IsHero()
-    {
-        return false;
-    }
-    public override bool IsEnemy()
-    {
-            return true;
-        }
 }

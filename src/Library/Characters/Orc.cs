@@ -1,8 +1,10 @@
-namespace Library.Personajes;
+using Library.Characters.AncestralClasses;
 
-public class Orc: PersonajeBase
+namespace Library.Characters;
+
+public class Orc: BaseCharacter
 {
-    public Orc(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
+    public Orc(string name, int life, int victoryPoints) :  base(name, life)
     {
         this.VictoryPoints = victoryPoints;
     }
@@ -23,15 +25,5 @@ public class Orc: PersonajeBase
                 Console.WriteLine($"{Name} ha sido derrotado.");
             }
         }
-    }
-
-    
-    public override bool IsHero()
-    {
-        return false;
-    }
-    public override bool IsEnemy()
-    {
-        return true;
     }
 }
