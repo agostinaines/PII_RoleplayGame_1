@@ -2,7 +2,7 @@ using Library.Characters.AncestralClasses;
 
 namespace Library.Characters;
 
-public class Momia: BaseCharacter
+public class Momia: HeroCharacter
 {
     public Momia(string name, int life, int victoryPoints) :  base(name, life)
     {
