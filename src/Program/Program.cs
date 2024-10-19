@@ -14,22 +14,22 @@ public class Program
         // Creación de Items
 
         // Items de Luis
-        IItem martillo = new Espada("Martillo de la Montaña", 50, 10);  
-        IItem botas = new Armadura("Botas de Hierro", 20); 
-        IItem lanzaDardos = new Arco("Lanza de Dardos", 20);
-        IItem escudoMagico = new Escudo("Escudo Magico", 10); 
-        IItem baculo = new Espada("Báculo Mágico", 40, 0);
+        IItem martillo = new Sword("Martillo de la Montaña", 50, 10);  
+        IItem botas = new Armor("Botas de Hierro", 20); 
+        IItem lanzaDardos = new Bow("Lanza de Dardos", 20);
+        IItem escudoMagico = new Shield("Escudo Magico", 10); 
+        IItem baculo = new Sword("Báculo Mágico", 40, 0);
 
         // Items de Pilar
-        IItem varitaMagica = new Arco("Varita Mágica", 35);  
-        IItem anilloBosque = new Armadura("Anillo del Bosque", 12);
-        IItem manto = new Armadura("Manto Protector", 5);
+        IItem varitaMagica = new Bow("Varita Mágica", 35);  
+        IItem anilloBosque = new Armor("Anillo del Bosque", 12);
+        IItem manto = new Armor("Manto Protector", 5);
 
         // Items de Agostina
-        IItem sting = new Espada("Sting", 45, 5);          
-        IItem anilloUnico = new Armadura("Anillo Único", 250); 
-        IItem fuegosArtificiales = new Arco("Fuegos Artificiales", 25);
-        IItem morgul = new Espada("Morgul", 60, 25);
+        IItem sting = new Sword("Sting", 45, 5);          
+        IItem anilloUnico = new Armor("Anillo Único", 250); 
+        IItem fuegosArtificiales = new Bow("Fuegos Artificiales", 25);
+        IItem morgul = new Sword("Morgul", 60, 25);
 
         // Creación de Spells
 
@@ -52,21 +52,21 @@ public class Program
         // Personajes de Luis
 
         // Creación de un enano llamado Poppy con 200 puntos de vida máxima
-        Enano poppy = new Enano("Poppy", 200);
+        Dwarf poppy = new Dwarf("Poppy", 200);
         poppy.AddItem(martillo);
         poppy.AddItem(botas);
 
         // Creación de un enano llamado Teemo con 150 puntos de vida máxima
-        Enano teemo = new Enano("Teemo", 150);
+        Dwarf teemo = new Dwarf("Teemo", 150);
         teemo.AddItem(lanzaDardos);
         teemo.AddItem(botas);
 
         // Creación de un elfo llamado Soraka con 120 puntos de vida máxima
-        Elfo soraka = new Elfo("Soraka", 120);
+        Elf soraka = new Elf("Soraka", 120);
         soraka.AddItem(escudoMagico);
 
         // Creación de un mago llamado Veigar con 80 puntos de vida máxima
-        Mago veigar = new Mago("Veigar", 80);
+        Magician veigar = new Magician("Veigar", 80);
         veigar.AddItem(baculo);
         veigar.AddSpell(rayo);
         Console.WriteLine($"-------------{veigar.AttackValue}");
@@ -98,20 +98,20 @@ public class Program
         // Personajes de Pilar
 
         // Creación de un mago llamado Gandalf con 300 puntos de vida máxima
-        Mago gandalf = new Mago("Gandalf", 300);
+        Magician gandalf = new Magician("Gandalf", 300);
         gandalf.AddItem(varitaMagica);
         gandalf.AddItem(manto);
         gandalf.AddSpell(rayo);
         gandalf.AddSpell(absorcion);
 
         // Creación de un elfo llamado Elfo Navideño con 80 puntos de vida máxima
-        Elfo elfoNav = new Elfo("Elfo Navideño", 80);
-        elfoNav.AddItem(anilloBosque);
-        elfoNav.AddItem(botas);
-        elfoNav.AddItem(lanzaDardos);
+        Elf elfNav = new Elf("Elfo Navideño", 80);
+        elfNav.AddItem(anilloBosque);
+        elfNav.AddItem(botas);
+        elfNav.AddItem(lanzaDardos);
 
         Console.WriteLine($"La vida de Gandalf es de {gandalf.Health}");
-        Console.WriteLine($"El valor de ataque de Elfo Navideño es de {elfoNav.AttackValue}");
+        Console.WriteLine($"El valor de ataque de Elfo Navideño es de {elfNav.AttackValue}");
 
         // Gandalf ataca a Soraka
         soraka.ReceiveAttack(gandalf.AttackValue);
@@ -122,13 +122,13 @@ public class Program
         Console.WriteLine($"La vida de Soraka es de {soraka.Health}");
 
         // Gandalf usa un spell contra Elfo Navideño
-        elfoNav.ReceiveAttack(gandalf.UsarSpell(absorcion));
-        Console.WriteLine($"La vida del Elfo Navideño es de {elfoNav.Health}\n");
+        elfNav.ReceiveAttack(gandalf.UsarSpell(absorcion));
+        Console.WriteLine($"La vida del Elfo Navideño es de {elfNav.Health}\n");
 
         // Personajes de Agostina
 
         // Creación de un elfo llamado Galadriel con 160 puntos de vida máxima
-        Elfo galadriel = new Elfo("Galadriel", 160);
+        Elf galadriel = new Elf("Galadriel", 160);
         galadriel.AddItem(sting);
         galadriel.AddItem(fuegosArtificiales);
 
@@ -136,7 +136,7 @@ public class Program
         Console.WriteLine($"El valor de ataque de Galadriel es de {galadriel.AttackValue}");
 
         // Creación de un mago llamado Saruman con 200 puntos de vida máxima
-        Mago saruman = new Mago("Saruman", 200);
+        Magician saruman = new Magician("Saruman", 200);
         saruman.AddItem(anilloUnico);
         saruman.AddItem(morgul);
         saruman.AddSpell(tornado);
