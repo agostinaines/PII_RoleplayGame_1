@@ -2,11 +2,10 @@ using Library.Characters.AncestralClasses;
 
 namespace Library.Characters;
 
-public class Dragon: BaseCharacter
+public class Dragon: EnemyCharacter
 {
-    public Dragon(string name, int life, int victoryPoints) :  base(name, life)
+    public Dragon(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
     {
-        this.VictoryPoints = victoryPoints;
     }
 
     public override void ReceiveAttack(int damage)
