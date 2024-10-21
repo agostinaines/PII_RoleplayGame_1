@@ -1,5 +1,4 @@
-﻿using Library;
-using Library.Characters;
+﻿using Library.Characters;
 using Library.Interfaces;
 using Library.Items;
 
@@ -219,6 +218,5 @@ public class Program
         
         //Combat.HeroAttacksEnemy(saruman, orco1);
         Console.WriteLine($"Los puntos de victoria de {saruman.Name}, ahora son {saruman.VictoryPoints}");
-        
     }
 }
