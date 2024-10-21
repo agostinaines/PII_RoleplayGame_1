@@ -190,7 +190,7 @@ public class Program
         
         // --------------------------------------------------------------------------------
         
-        // Creacion de personajes + items
+        // Creacion de PERSONAJES + ITEMS
         Orc orco1 = new Orc("Gruk", 150,15);
         orco1.AddItem(espadaRustica);
         orco1.AddItem(armaduraCuero);
@@ -205,7 +205,11 @@ public class Program
 
         Giant gigante1 = new Giant("Basajaun", 200, 25);
         gigante1.AddItem(espadaDeHierro);
-        gigante1.AddItem();
+        gigante1.AddItem(escudoHierro);
+
+        Troll troll1 = new Troll("Trolgar", 70, 5);
+        troll1.AddItem(arcoBasico);
+        troll1.AddItem(armaduraCuero);
         
         // --------------------------------------------------------------------------------//
         
@@ -217,6 +221,4 @@ public class Program
         Console.WriteLine($"Los puntos de victoria de {saruman.Name}, ahora son {saruman.VictoryPoints}");
         
     }
-    
-    
 }
