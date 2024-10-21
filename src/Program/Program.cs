@@ -182,7 +182,7 @@ public class Program
         orco1.AddItem(espadaRustica);
         orco1.AddItem(armaduraCuero);
         
-        Momia momia1 = new Momia("Mummy", 100,10);
+        Mummy momia1 = new Mummy("Mummy", 100,10);
         momia1.AddItem(espadaOxidada);
         momia1.AddItem(armaduraVendas);
         
