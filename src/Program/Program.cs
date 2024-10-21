@@ -92,7 +92,7 @@ public class Program
         Console.WriteLine($"La vida de Soraka es de {soraka.Health}");
 
         // Veigar usa un spell contra Poppy
-        poppy.ReceiveAttack(veigar.UsarSpell(rayo));
+        poppy.ReceiveAttack(veigar.UseSpell(rayo));
         Console.WriteLine($"La vida de Poppy es de {poppy.Health}\n");
 
         // Personajes de Pilar
@@ -122,7 +122,7 @@ public class Program
         Console.WriteLine($"La vida de Soraka es de {soraka.Health}");
 
         // Gandalf usa un spell contra Elfo Navideño
-        elfNav.ReceiveAttack(gandalf.UsarSpell(absorcion));
+        elfNav.ReceiveAttack(gandalf.UseSpell(absorcion));
         Console.WriteLine($"La vida del Elfo Navideño es de {elfNav.Health}\n");
 
         // Personajes de Agostina
@@ -154,7 +154,7 @@ public class Program
         Console.WriteLine($"La vida de Galadriel es de {galadriel.Health}");
 
         // Saruman usa un hechizo contra Galadriel
-        galadriel.ReceiveAttack(saruman.UsarSpell(tornado));
+        galadriel.ReceiveAttack(saruman.UseSpell(tornado));
         Console.WriteLine($"La vida de Galadriel es de {galadriel.Health}\n");
         
         // ----------------------------enemigos------------------------------ //

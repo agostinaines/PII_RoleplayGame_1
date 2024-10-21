@@ -84,7 +84,7 @@ namespace ProgramTests
             _magician.AddSpell(rayo);
 
             // Verificamos que el mago puede usar el hechizo "Rayo"
-            int ataque = _magician.UsarSpell(rayo);
+            int ataque = _magician.UseSpell(rayo);
             Assert.That(ataque, Is.EqualTo(40));
         }
 
@@ -95,7 +95,7 @@ namespace ProgramTests
             Spell escudoMagico = new Spell("Escudo Mágico", 0);
 
             // Intentamos usar un hechizo que no está en la lista de hechizos
-            int ataque = _magician.UsarSpell(escudoMagico);
+            int ataque = _magician.UseSpell(escudoMagico);
             Assert.That(ataque, Is.EqualTo(0));
         }
 
@@ -110,11 +110,11 @@ namespace ProgramTests
             _magician.AddSpell(bolaDeFuego);
 
             // Verificamos que puede lanzar "Bola de Fuego"
-            int ataqueBolaDeFuego = _magician.UsarSpell(bolaDeFuego);
+            int ataqueBolaDeFuego = _magician.UseSpell(bolaDeFuego);
             Assert.That(ataqueBolaDeFuego, Is.EqualTo(50));
 
             // Verificamos que no puede lanzar "Rayo" (no lo tiene)
-            int ataqueRayo = _magician.UsarSpell(rayo);
+            int ataqueRayo = _magician.UseSpell(rayo);
             Assert.That(ataqueRayo, Is.EqualTo(0));
         }
 
