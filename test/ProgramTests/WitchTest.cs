@@ -1,8 +1,9 @@
 ﻿using Library.Characters;
 using Library.Items;
-using NUnit.Framework;
 
-public class TestsWitch
+namespace ProgramTests;
+
+public class WitchTest
 {
     private Witch _witch;
 

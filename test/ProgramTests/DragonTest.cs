@@ -4,7 +4,7 @@ using Library.Items;
 // Test de Romina
 namespace ProgramTests
 {
-    public class DragonTest
+    public partial class DragonTest
     {
         private Dragon _dragon;
 

@@ -2,10 +2,10 @@ using Library.Characters.AncestralClasses;
 
 namespace Library.Characters;
 
-public class Golem: BaseCharacter
+public class Golem: EnemyCharacter
 {
 
-    public Golem(string name, int life) :  base(name, life)
+    public Golem(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
     {
     }
 
