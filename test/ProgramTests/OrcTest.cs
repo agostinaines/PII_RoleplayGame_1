@@ -57,6 +57,7 @@ namespace ProgramTests
             _orc.AddItem(espadaRustica);
 
             // Verificamos que el valor de ataque aumenta
+            _orc.CalculateAttackValue();
             Assert.That(_orc.AttackValue, Is.EqualTo(25));
             Assert.That(_orc.Items.Count, Is.EqualTo(1));
         }

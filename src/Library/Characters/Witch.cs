@@ -24,28 +24,9 @@ public class Witch: EnemyCharacter
         return 0;
     }
 
-
     public void AddSpell(Spell spell)
     {
         this.Spells.Add(spell);
         AttackValue += spell.Attack;
-    }
-
-    public override void ReceiveAttack(int damage)
-    {
-        if (Health <= 0)
-        {
-            Console.WriteLine($"{Name} ya está muerto.");
-        }
-        else
-        {
-            // Daño directo sin modificaciones
-            Health -= damage;
-            if (Health < 0)
-            {
-                Health = 0;
-                Console.WriteLine($"{Name} ha sido derrotado.");
-            }
-        }
     }
 }

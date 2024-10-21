@@ -56,6 +56,7 @@ namespace ProgramTests
             _elf.AddItem(arcoDeGaladhrim);
 
             // Verificamos que el valor de ataque aumenta
+            _elf.CalculateAttackValue();
             Assert.That(_elf.AttackValue, Is.EqualTo(35));
             Assert.That(_elf.Items.Count, Is.EqualTo(1));
         }

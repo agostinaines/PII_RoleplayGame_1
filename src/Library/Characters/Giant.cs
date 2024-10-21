@@ -16,9 +16,10 @@ public class Giant : EnemyCharacter
         }
         else
         {
-            // El gigante tiene una alta defensa y reduce el daño recibido en un 30%
-            int damageReceived = damage - (damage / (10/3));
-            Health -= damageReceived;
+            // El gigante tiene una alta defensa y reduce el daño recibido en un 30%, ademas del DefenseValue
+            double damageReceived = damage * (1 - 0.3) * (1 - (DefenseValue / 100.0));
+    
+            Health -= (int)damageReceived;
             if (Health < 0)
             {
                 Health = 0;

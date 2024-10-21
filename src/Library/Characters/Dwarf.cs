@@ -17,8 +17,11 @@ public class Dwarf: BaseCharacter
         }
         else
         {
-            int damageReceived = damage - (damage * 30 / 100);
-            Health -= damageReceived;
+            // El enano reduce un 20% del daño, además del DefenseValue
+            double damageReceived = damage * (1 - 0.30) * (1 - (DefenseValue / 100.0));
+
+            Health -= (int)damageReceived;
+
             if (Health < 0)
             {
                 Health = 0;
