@@ -17,10 +17,9 @@ public class Dwarf: BaseCharacter
         }
         else
         {
-            // El enano reduce un 10% del daño recibido
-            int damageReceived = damage - (damage / 10);
+            int damageReceived = damage - (damage * 30 / 100);
             Health -= damageReceived;
-            if (Health < 0)                             // aca capaz que hay que hacer un override para que mago y elfo usen la herencia a diferencia de enano, pero no se como funciona.
+            if (Health < 0)
             {
                 Health = 0;
                 Console.WriteLine("Mataste a ese enemigo");
