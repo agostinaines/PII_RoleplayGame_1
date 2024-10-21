@@ -4,15 +4,15 @@ using Library.Items;
 // Test de Romina
 namespace ProgramTests
 {
-    public class MomiaTest
+    public class Mummy
     {
-        private Momia _momia;
+        private Library.Characters.Mummy _momia;
 
         [SetUp]
         public void Setup()
         {
             // Inicializamos un objeto Momia antes de cada test con un nombre, 100 de vida y 10 VP
-            _momia = new Momia("Mummy", 100, 10);
+            _momia = new Library.Characters.Mummy("Mummy", 100, 10);
         }
 
         [Test]
