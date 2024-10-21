@@ -1,6 +1,5 @@
 ﻿namespace Library.Interfaces;
 
-public interface IItem: IItemDefense, IItemAttack
+public interface IItem
 {
-    
 }
