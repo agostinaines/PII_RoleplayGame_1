@@ -1,8 +1,7 @@
 ﻿namespace Library.Interfaces;
 
-public interface IItemAttack
+public interface IItemAttack : IItem
 {
     public string Name { get; set; }
     public int Attack { get; set; }
-    public bool IsAttack();
 }

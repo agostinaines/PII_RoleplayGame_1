@@ -1,11 +1,10 @@
-using Library.Characters.AncestralClasses;
+﻿using Library.Characters.AncestralClasses;
 
 namespace Library.Characters;
 
-public class Golem: EnemyCharacter
+public class Giant : EnemyCharacter
 {
-
-    public Golem(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
+    public Giant(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
     {
     }
 
@@ -17,7 +16,8 @@ public class Golem: EnemyCharacter
         }
         else
         {
-            int damageReceived = damage - (damage * 60 / 100);
+            // El gigante tiene una alta defensa y reduce el daño recibido en un 30%
+            int damageReceived = damage - (damage / (10/3));
             Health -= damageReceived;
             if (Health < 0)
             {

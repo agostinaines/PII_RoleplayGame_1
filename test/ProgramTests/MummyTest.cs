@@ -4,7 +4,7 @@ using Library.Items;
 // Test de Romina
 namespace ProgramTests
 {
-    public class Mummy
+    public class MummyTest
     {
         private Library.Characters.Mummy _momia;
 

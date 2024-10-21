@@ -3,11 +3,11 @@ using Library.Items;
 
 namespace Library.Characters;
 
-public class Magician : HeroCharacter
+public class Wizard : HeroCharacter
 {
     public List<Spell> Spells { get; set; }
 
-    public Magician(string name, int life) : base(name, life)
+    public Wizard(string name, int life) : base(name, life)
     {
         this.Spells = new List<Spell>();
     }
@@ -23,8 +23,7 @@ public class Magician : HeroCharacter
         }
         return 0;
     }
-
-
+    
     public void AddSpell(Spell spell)
     {
         this.Spells.Add(spell);

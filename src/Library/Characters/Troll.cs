@@ -1,11 +1,10 @@
-using Library.Characters.AncestralClasses;
+﻿using Library.Characters.AncestralClasses;
 
 namespace Library.Characters;
 
-public class Golem: EnemyCharacter
+public class Troll : EnemyCharacter
 {
-
-    public Golem(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
+    public Troll(string name, int life, int victoryPoints) :  base(name, life, victoryPoints)
     {
     }
 
@@ -17,7 +16,8 @@ public class Golem: EnemyCharacter
         }
         else
         {
-            int damageReceived = damage - (damage * 60 / 100);
+            // Recibe daño sin cambios
+            int damageReceived = damage;
             Health -= damageReceived;
             if (Health < 0)
             {

@@ -2,7 +2,7 @@ using Library.Interfaces;
 
 namespace Library.Items;
 
-public abstract class BaseItem : IItem
+public abstract class BaseItem : IItem, IIsMagic
 {
     public string Name { get; set; }
     public int Attack { get; set; }
@@ -15,7 +15,4 @@ public abstract class BaseItem : IItem
         this.Attack = attack;
         this.Defense = defense;
     }
-
-    public abstract bool IsAttack();
-    public abstract bool IsDefense();
 }
