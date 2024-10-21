@@ -13,7 +13,7 @@ public class Dwarf: BaseCharacter
     {
         if (Health <= 0)
         {
-            Console.WriteLine("Atacaste a un muerto :(");
+            Console.WriteLine($"{Name} ya está muerto.");
         }
         else
         {
@@ -22,9 +22,8 @@ public class Dwarf: BaseCharacter
             if (Health < 0)
             {
                 Health = 0;
-                Console.WriteLine("Mataste a ese enemigo");
+                Console.WriteLine($"{Name} ha sido derrotado.");
             }
         }
     }
-    
 }
