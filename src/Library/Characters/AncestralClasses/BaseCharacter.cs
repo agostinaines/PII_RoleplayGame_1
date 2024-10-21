@@ -28,8 +28,32 @@ public abstract class BaseCharacter : ICharacter
     public void AddItem(IItem item)
     {
         this.Items.Add(item);
-        AttackValue += item.Attack;
-        DefenseValue += item.Defense;
+    }
+
+    public void CalculateAttackValue()
+    {
+        this.AttackValue = 0;
+        foreach (IItem item in Items)
+        {
+            if (item is IItemAttack)
+            {
+                IItemAttack itemAttack = (IItemAttack)item;
+                AttackValue += itemAttack.Attack;
+            }
+        }
+    }
+
+    public void CalculateDefenseValue()
+    {
+        this.DefenseValue = 0;
+        foreach (IItem item in Items)
+        {
+            if (item is IItemDefense)
+            {
+                IItemDefense itemDefense = (IItemDefense)item;
+                DefenseValue += itemDefense.Defense;
+            }
+        }
     }
     
     public virtual void ReceiveAttack(int damage)
