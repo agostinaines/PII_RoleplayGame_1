@@ -7,49 +7,49 @@ public class Program
 {
     public static void Main()
     {
+        Console.WriteLine("¡Bienvenidos a la Tierra Media! \n");
+        
         List<Spell> spellBook = new List<Spell>();
         
-        Console.WriteLine("¡Bienvenidos a la Tierra Media! \n");
+        // ---------------------------------------- ITEMS 1 ---------------------------------------- //
 
-        // Creación de Items
-
-        // Items de Luis
+        // Items de LUIS
         IItem martillo = new Sword("Martillo de la Montaña", 50, 10);  
         IItem botas = new Armor("Botas de Hierro", 20); 
         IItem lanzaDardos = new Bow("Lanza de Dardos", 20);
         IItem escudoMagico = new Shield("Escudo Magico", 10); 
         IItem baculo = new Sword("Báculo Mágico", 40, 0);
 
-        // Items de Pilar
+        // Items de PILAR
         IItem varitaMagica = new Bow("Varita Mágica", 35);  
         IItem anilloBosque = new Armor("Anillo del Bosque", 12);
         IItem manto = new Armor("Manto Protector", 5);
 
-        // Items de Agostina
+        // Items de AGOSTINA
         IItem sting = new Sword("Sting", 45, 5);          
         IItem anilloUnico = new Armor("Anillo Único", 250); 
         IItem fuegosArtificiales = new Bow("Fuegos Artificiales", 25);
         IItem morgul = new Sword("Morgul", 60, 25);
 
-        // Creación de Spells
+        // ---------------------------------------- SPELLS ---------------------------------------- //
 
-        // Spells de Luis
+        // Spells de LUIS
         Spell rayo = new Spell("Rayo eléctrico", 100);
         Spell fuego = new Spell("Bola de fuego", 90);
 
-        // Spells de Pilar
+        // Spells de PILAR
         Spell rafaga = new Spell("Ráfaga de viento", 80);
         Spell absorcion = new Spell("Absorción de vida", 20);
         Spell tsunami = new Spell("Tsunami de agua", 110);
 
-        // Spells de Agostina
+        // Spells de AGOSTINA
         Spell tornado = new Spell("Tornado", 130);
         Spell invisibilidad = new Spell("Invisibilidad", 20);
         Spell velocidad = new Spell("Velocidad", 30);
 
-        // Creación de personajes
+        // ---------------------------------------- PERSONAJES ---------------------------------------- //
 
-        // Personajes de Luis
+        // Personajes de LUIS
 
         // Creación de un enano llamado Poppy con 200 puntos de vida máxima
         Dwarf poppy = new Dwarf("Poppy", 200);
@@ -66,7 +66,7 @@ public class Program
         soraka.AddItem(escudoMagico);
 
         // Creación de un mago llamado Veigar con 80 puntos de vida máxima
-        Magician veigar = new Magician("Veigar", 80);
+        Wizard veigar = new Wizard("Veigar", 80);
         veigar.AddItem(baculo);
         veigar.AddSpell(rayo);
         Console.WriteLine($"-------------{veigar.AttackValue}");
@@ -95,10 +95,12 @@ public class Program
         poppy.ReceiveAttack(veigar.UseSpell(rayo));
         Console.WriteLine($"La vida de Poppy es de {poppy.Health}\n");
 
-        // Personajes de Pilar
+        // -------------------------------------------------------------------------------- //
+        
+        // Personajes de PILAR
 
         // Creación de un mago llamado Gandalf con 300 puntos de vida máxima
-        Magician gandalf = new Magician("Gandalf", 300);
+        Wizard gandalf = new Wizard("Gandalf", 300);
         gandalf.AddItem(varitaMagica);
         gandalf.AddItem(manto);
         gandalf.AddSpell(rayo);
@@ -125,7 +127,9 @@ public class Program
         elfNav.ReceiveAttack(gandalf.UseSpell(absorcion));
         Console.WriteLine($"La vida del Elfo Navideño es de {elfNav.Health}\n");
 
-        // Personajes de Agostina
+        // -------------------------------------------------------------------------------- //
+        
+        // Personajes de AGOSTINA
 
         // Creación de un elfo llamado Galadriel con 160 puntos de vida máxima
         Elf galadriel = new Elf("Galadriel", 160);
@@ -136,7 +140,7 @@ public class Program
         Console.WriteLine($"El valor de ataque de Galadriel es de {galadriel.AttackValue}");
 
         // Creación de un mago llamado Saruman con 200 puntos de vida máxima
-        Magician saruman = new Magician("Saruman", 200);
+        Wizard saruman = new Wizard("Saruman", 200);
         saruman.AddItem(anilloUnico);
         saruman.AddItem(morgul);
         saruman.AddSpell(tornado);
@@ -157,25 +161,34 @@ public class Program
         galadriel.ReceiveAttack(saruman.UseSpell(tornado));
         Console.WriteLine($"La vida de Galadriel es de {galadriel.Health}\n");
         
-        // ----------------------------enemigos------------------------------ //
+        // ---------------------------------------- ITEMS 2 ---------------------------------------- //
         
-        // Creacion de items
-        // ----ESPADAS----
+        // ESPADAS
         IItem espadaOxidada = new Sword("Espada Oxidada", 15, 0);
-        IItem espadaRustica = new Sword("Espada Rustica", 25, 0);
+        IItem espadaRustica = new Sword("Espada Rústica", 25, 0);
         IItem espadaMadera = new Sword("Espada de Madera", 20, 0);
         IItem espadaLarga = new Sword("Espada Larga", 40, 0);
-        //----ARMADURA----
-        IItem armaduraCuero = new Armor("Armadura de cuero", 10);
+        IItem espadaDeHierro = new Sword("Espada de Hierro", 10, 0);
+        
+        // ARMADURA
+        IItem armaduraCuero = new Armor("Armadura de Cuero", 10);
         IItem armaduraVendas = new Armor("Vendaje de Momia", 10);
         IItem armaduraDesgastada = new Armor("Armadura Desgastada", 8);
-        //----ESCUDOS----
+        
+        // ESCUDOS
         IItem escudoPiel = new Shield("Escudo de Piel", 15);
         IItem escudoEscamas = new Shield("Escudo de Escamas", 30);
         IItem escudoHierro = new Shield("Escudo de Hierro", 25);
-        //----HACHAS----
+        
+        // HACHAS
         IItem hachaGuerra = new Axe("Hacha de Guerra", 50);
         IItem hachaMadera = new Axe("Hacha de Madera", 20);
+        
+        // ARCOS
+        IItem arcoBasico = new Bow("Arco Básico", 5);
+        
+        
+        // --------------------------------------------------------------------------------
         
         // Creacion de personajes + items
         Orc orco1 = new Orc("Gruk", 150,15);
@@ -189,12 +202,17 @@ public class Program
         Dragon dragon1 = new Dragon("Draco", 300,30);
         dragon1.AddItem(hachaGuerra);
         dragon1.AddItem(escudoEscamas);
-       
+
+        Giant gigante1 = new Giant("Basajaun", 200, 25);
+        gigante1.AddItem(espadaDeHierro);
+        gigante1.AddItem();
         
+        // --------------------------------------------------------------------------------//
         
         // Ejemplo de combate 
         Console.WriteLine($"Salud de {orco1.Name} antes del ataque: {orco1.Health}");
         Console.WriteLine($"Valor de ataque de {saruman.Name} es {saruman.AttackValue}");
+        
         //Combat.HeroAttacksEnemy(saruman, orco1);
         Console.WriteLine($"Los puntos de victoria de {saruman.Name}, ahora son {saruman.VictoryPoints}");
         
