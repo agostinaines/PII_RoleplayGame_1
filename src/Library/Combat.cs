@@ -1,5 +1,4 @@
 using Library.Characters.AncestralClasses;
-using Library.Interfaces;
 
 namespace Library.Funcionalidades;
 

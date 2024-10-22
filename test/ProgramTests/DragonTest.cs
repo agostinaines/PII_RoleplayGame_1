@@ -5,14 +5,14 @@ using Library.Interfaces;
 // Test de Romina
 namespace ProgramTests
 {
-    public partial class DragonTest
+    public class DragonTest
     {
         private Dragon _dragon;
 
         [SetUp]
         public void Setup()
         {
-            // Inicializamos un objeto Orc antes de cada test con un nombre, 150 de vida y 15 VP
+            // Inicializamos un objeto Dragón con un nombre, 300 de vida y 30 VP
             _dragon = new Dragon("Draco", 300, 30);
         }
 
@@ -115,7 +115,6 @@ namespace ProgramTests
             //Verificamos que el valor de defensa aumenta
             Assert.That(_dragon.DefenseValue, Is.EqualTo(30));
         }
-
     }
 }
 

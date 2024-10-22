@@ -10,7 +10,6 @@ public abstract class BaseCharacter : ICharacter
     public List<IItem> Items { get; set; }
     public int AttackValue { get; set; }
     public int DefenseValue { get; set; }
-    public int VictoryPoints { get; set; }
     
     protected BaseCharacter(string name, int life)
     {
