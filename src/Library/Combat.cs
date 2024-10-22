@@ -1,141 +1,47 @@
-using Library.Characters.AncestralClasses;
+using Library.Characters.AncestralClasses; // Asegúrate de que el namespace correcto está importado
 
-namespace Library.Funcionalidades;
-
-public class Combat
+namespace Library.Funcionalidades
 {
-    public void DoEncounter(List<HeroCharacter> heroes, List<EnemyCharacter> enemies)
+    public class Combat
     {
-        while (heroes.Count != 0 || enemies.Count != 0)
+        public void DoEncounter(List<HeroCharacter> heroes, List<EnemyCharacter> enemies)
         {
-            if (heroes.Count > enemies.Count)
+            while (heroes.Count != 0 && enemies.Count != 0)
             {
-                int enemiesI = 0;
-                int heroesI = 0;
 
-                while (enemiesI < enemies.Count)
+                for (int heroesI = 0; heroesI < heroes.Count; )
                 {
-                    heroes[heroesI].ReceiveAttack(enemies[enemiesI].AttackValue);
+
+                    enemies[heroesI % enemies.Count].ReceiveAttack(heroes[heroesI].AttackValue);
+
+                    heroes[heroesI].ReceiveAttack(enemies[heroesI % enemies.Count].AttackValue);
+
+                    if (enemies[heroesI % enemies.Count].Health <= 0)
+                    {
+                        heroes[heroesI].AddVictoryPoints(enemies[heroesI % enemies.Count].VictoryPoints);
+                        
+                        enemies.RemoveAt(heroesI % enemies.Count);
+                    }
+                    
+                    if (heroes[heroesI].VictoryPoints >= 5 && heroes[heroesI].Health <= 0)
+                    {
+                        heroes[heroesI].Health = heroes[heroesI].MaxHealth;
+                        
+                        heroes[heroesI].VictoryPoints -= 5;
+                    }
                     if (heroes[heroesI].Health <= 0)
                     {
                         heroes.RemoveAt(heroesI);
-                    }
-                    enemiesI++;
-                    heroesI++;
-                }
-
-                enemiesI = 0;
-                heroesI = 0;
-                while (heroesI < heroes.Count)
-                {
-                    enemies[enemiesI].ReceiveAttack(heroes[heroesI].AttackValue);
-                    if (enemies[enemiesI].Health <= 0)
-                    {
-                        heroes[heroesI].AddVictoryPoints(enemies[enemiesI].VictoryPoints);
-                        if (heroes[heroesI].VictoryPoints >= 5)
-                        {
-                            heroes[heroesI].Health = heroes[heroesI].MaxHealth;
-                            heroes[heroesI].VictoryPoints -= 5;
-                        }
-                        enemies.RemoveAt(enemiesI);
-                    }
-                    
-                    if (enemiesI == enemies.Count - 1)
-                    {
-                        enemiesI = 0;
                     }
                     else
                     {
-                        enemiesI++;
+                        heroesI++; 
                     }
-
-                    heroesI++;
-                }
-            }
-            
-            
-            if (heroes.Count < enemies.Count)
-            {
-                int enemiesI = 0;
-                int heroesI = 0;
-                while (enemiesI < enemies.Count)
-                {
-                    heroes[heroesI].ReceiveAttack(enemies[enemiesI].AttackValue);
-                    if (heroes[heroesI].Health <= 0)
-                    {
-                        heroes.RemoveAt(heroesI);
-                    }
-                    
-                    if (heroesI == heroes.Count - 1)
-                    {
-                        heroesI = 0;
-                    }
-                    else
-                    {
-                        heroesI++;
-                    }
-
-                    enemiesI++;
-                }
-                
-                enemiesI = 0;
-                heroesI = 0;
-
-                while (heroesI < heroes.Count)
-                {
-                    enemies[enemiesI].ReceiveAttack(heroes[heroesI].AttackValue);
-                    if (enemies[enemiesI].Health <= 0)
-                    {
-                        heroes[heroesI].AddVictoryPoints(enemies[enemiesI].VictoryPoints);
-                        if (heroes[heroesI].VictoryPoints >= 5)
-                        {
-                            heroes[heroesI].Health = heroes[heroesI].MaxHealth;
-                            heroes[heroesI].VictoryPoints -= 5;
-                        }
-                        enemies.RemoveAt(enemiesI);
-                    }
-                    enemiesI++;
-                    heroesI++;
-                }
-            }
-            
-            
-            if (heroes.Count == enemies.Count)
-            {
-                int enemiesI = 0;
-                int heroesI = 0;
-                
-                while (enemiesI < enemies.Count)
-                {
-                    heroes[heroesI].ReceiveAttack(enemies[enemiesI].AttackValue);
-                    if (heroes[heroesI].Health <= 0)
-                    {
-                        heroes.RemoveAt(heroesI);
-                    }
-                    enemiesI++;
-                    heroesI++;
-                }
-                
-                enemiesI = 0;
-                heroesI = 0;
-
-                while (heroesI < heroes.Count)
-                {
-                    enemies[enemiesI].ReceiveAttack(heroes[heroesI].AttackValue);
-                    if (enemies[enemiesI].Health <= 0)
-                    {
-                        heroes[heroesI].AddVictoryPoints(enemies[enemiesI].VictoryPoints);
-                        if (heroes[heroesI].VictoryPoints >= 5)
-                        {
-                            heroes[heroesI].Health = heroes[heroesI].MaxHealth;
-                            heroes[heroesI].VictoryPoints -= 5;
-                        }
-                        enemies.RemoveAt(enemiesI);
-                    }
-                    enemiesI++;
-                    heroesI++;
+                    if (heroesI >= heroes.Count || enemies.Count == 0) break;
                 }
             }
         }
     }
 }
+
+
