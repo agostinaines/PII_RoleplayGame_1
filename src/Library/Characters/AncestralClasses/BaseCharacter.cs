@@ -63,7 +63,10 @@ public abstract class BaseCharacter : ICharacter
         }
         else
         {
-            Health -= damage;
+            double effectiveDamage = damage * (1 - (DefenseValue / 100.0));
+            
+            Health -= (int)effectiveDamage;
+            
             if (Health < 0)
             {
                 Health = 0;

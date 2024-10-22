@@ -55,8 +55,11 @@ namespace ProgramTests
             // Creamos un item de prueba
             Sword espadaGlamdring = new Sword("Glamdring", 20, 15);
             wizard.AddItem(espadaGlamdring);
+            
 
             // Verificamos que el valor de ataque aumenta
+            wizard.CalculateAttackValue();
+            wizard.CalculateDefenseValue();
             Assert.That(wizard.AttackValue, Is.EqualTo(20));
             Assert.That(wizard.DefenseValue, Is.EqualTo(15));
             Assert.That(wizard.Items.Count, Is.EqualTo(1));

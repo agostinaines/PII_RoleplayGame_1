@@ -16,9 +16,11 @@ public class Mummy: EnemyCharacter
         }
         else
         {
-            // La momia reduce el daño recibido en un 5%
-            int damageReceived = damage - (damage / 20);
-            Health -= damageReceived;
+            // La momia reduce el daño recibido en un 5% ademas del DefenseValue
+            double damageReceived = damage * (1 - 0.05) * (1 - (DefenseValue / 100.0));
+
+            Health -= (int)damageReceived;
+            
             if (Health < 0)
             {
                 Health = 0;

@@ -17,8 +17,10 @@ public class Golem: EnemyCharacter
         }
         else
         {
-            int damageReceived = damage - (damage * 60 / 100);
-            Health -= damageReceived;
+            //El golem reduce un 60% del daño, ademas del DefenseValue
+            double damageReceived = damage * (1 - 0.6) * (1 - (DefenseValue / 100.0));
+
+            Health -= (int)damageReceived;
             if (Health < 0)
             {
                 Health = 0;
