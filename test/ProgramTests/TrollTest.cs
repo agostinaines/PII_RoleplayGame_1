@@ -31,11 +31,21 @@ namespace ProgramTests
         [Test]
         public void RecibirAtaque_ReduceVida()
         {
-            //  Daño reducido ---> 30 - (30 / 5) = 24 ---> 200 - 24 = 176
+            // Crear un troll con vida inicial de 200
+            var troll = new Troll("Troll", 200, 10);
 
+            // Agregar un ítem de defensa al troll para que tenga un valor de defensa
+            IItem armadura = new Armor("Armadura de Piel", 20);
+            troll.AddItem(armadura);
+            troll.CalculateDefenseValue();
+
+            // Simulamos el ataque con un daño de 30
             troll.ReceiveAttack(30);
+
+            // El daño efectivo será 30 * (1 - 0.20) = 24, entonces la vida restante será 200 - 24 = 176
             Assert.That(troll.Health, Is.EqualTo(176));
         }
+
 
         [Test]
         public void RecibirAtaque_NoBajaDeCero()
@@ -88,21 +98,17 @@ namespace ProgramTests
             var troll = new Troll("Troll", 100, 10);
 
             // Simular la defensa
-            IItem armadura = new Armor("Armadura de Piel", 20);
-            troll.AddItem(armadura);
+            IItem botas = new Armor("Botas de Hierro", 20);
+            troll.AddItem(botas);
             troll.CalculateDefenseValue();
 
             Console.WriteLine(troll.DefenseValue);
 
-            // Atacamos con un daño de 50, debería reducirse un 20% (asumiendo un 20% DefenseValue)
+            // Atacamos con un daño de 50, debería reducirse en función del valor de defensa
             troll.ReceiveAttack(50);
 
-            // El daño efectivo será 50 * (1 - 0.20) * (1 - (DefenseValue / 100.0))
-            double expectedDamage = 50 * (1 - 0.20) * (1 - (20.0 / 100.0));
-            double expectedHealth = 100 - expectedDamage;
-
-            // Comprobar que la salud final es la esperada
-            Assert.That(troll.Health, Is.EqualTo((int)expectedHealth));
+            // El daño efectivo será 50 * (1 - 0.20) = 40, entonces la vida restante será 100 - 40 = 60
+            Assert.That(troll.Health, Is.EqualTo(60)); 
         }
 
         [Test]

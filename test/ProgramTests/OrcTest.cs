@@ -60,17 +60,18 @@ namespace ProgramTests
             // Verificamos que el valor de ataque aumenta
             Assert.That(orc.AttackValue, Is.EqualTo(25));
             Assert.That(orc.Items.Count, Is.EqualTo(1));
-
-            [Test]
-            private void RecibirAtaqueAEnemigoMuertoNoCambiaVida()
-            {
-                // Reducimos la vida a cero
-                orc.ReceiveAttack(200);
-                orc.ReceiveAttack(30);
-
-                // Verificamos que la vida no cambia
-                Assert.That(orc.Health, Is.EqualTo(0));
-            }
         }
+
+        [Test]
+        public void RecibirAtaqueAEnemigoMuertoNoCambiaVida()
+        {
+            // Reducimos la vida a cero
+            orc.ReceiveAttack(200);
+            orc.ReceiveAttack(30);
+
+            // Verificamos que la vida no cambia
+            Assert.That(orc.Health, Is.EqualTo(0));
+        }
+        
     }
 }
