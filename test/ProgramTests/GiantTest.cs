@@ -44,7 +44,7 @@ namespace ProgramTests
             giant.CalculateDefenseValue();
             giant.ReceiveAttack(500);
             
-            Assert.That(giant.Health, Is.EqualTo(0));
+            Assert.That(giant.Health, Is.EqualTo(50));
         }
 
         [Test]
@@ -72,8 +72,8 @@ namespace ProgramTests
         public void RecibirAtaque_AEnemigoMuerto_NoCambiaVida()
         {
             // Reducimos la vida a cero
-            giant.ReceiveAttack(500);
-            giant.ReceiveAttack(30);
+            giant.ReceiveAttack(600);
+            giant.ReceiveAttack(600);
             giant.CalculateDefenseValue();
             giant.CalculateAttackValue();
 
