@@ -1,5 +1,6 @@
 using Library.Characters;
 using Library.Items;
+using Library.Interfaces;
 namespace ProgramTests;
 
 
@@ -29,10 +30,35 @@ public class GolemTest
     [Test]
     public void RecibirAtaque_ReduceVida()
     {
-        //  Daño reducido ---> 36 - (36 * 60 / 100) = 14,4 ---> 300 - 14,4 = 585,6
+        //  Daño reducido ---> 36 - (36 * 60 / 100) = 14,4 ---> 300 - 14,4 = 585,6 => 586
 
         _golem.ReceiveAttack(36);
-        Assert.That(_golem.Health, Is.EqualTo(585));
+        Assert.That(_golem.Health, Is.EqualTo(586));
+    }
+    
+    [Test]
+    public void RecibirAtaque_ConDefensa_ReduceDaño()
+    {
+        // Crear un golem con vida inicial de 100 y 10 puntos de victoria
+        var _golem = new Golem("Golem", 100, 10);
+
+        // Simular la defensa
+        IItem piedra = new Armor("Piedra Mágica", 20);
+        _golem.AddItem(piedra);
+        _golem.CalculateDefenseValue();
+
+        Console.WriteLine(_golem.DefenseValue);
+
+        // Atacamos con un daño de 50, debería reducirse un 60%
+        _golem.ReceiveAttack(50);
+
+        // El daño efectivo será 50 * (1 - 0.60) * (1 - (DefenseValue / 100.0))
+        // Asumiendo que el DefenseValue después de agregar la piedra es, por ejemplo, 20%
+        double expectedDamage = 50 * (1 - 0.60) * (1 - (20.0 / 100.0));
+        double expectedHealth = 100 - expectedDamage;
+
+        // Comprobar que la salud final es la esperada
+        Assert.That(_golem.Health, Is.EqualTo((int)expectedHealth));
     }
 
     [Test]
@@ -58,6 +84,7 @@ public class GolemTest
         _golem.AddItem(espadaLarga);
 
         // Verificamos que el valor de ataque aumenta
+        _golem.CalculateAttackValue();
         Assert.That(_golem.AttackValue, Is.EqualTo(40));
         Assert.That(_golem.Items.Count, Is.EqualTo(1));
     }

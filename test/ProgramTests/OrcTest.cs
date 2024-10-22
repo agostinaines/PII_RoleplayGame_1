@@ -59,7 +59,6 @@ namespace ProgramTests
             // Verificamos que el valor de ataque aumenta
             Assert.That(orc.AttackValue, Is.EqualTo(25));
             Assert.That(orc.Items.Count, Is.EqualTo(1));
-        }
 
         [Test]
         public void RecibirAtaque_AEnemigoMuerto_NoCambiaVida()
