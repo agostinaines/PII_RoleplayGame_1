@@ -54,6 +54,7 @@ namespace ProgramTests
             // Creamos un item de prueba
             Bow arcoDeGaladhrim = new Bow("Arco de Galadhrim", 35);
             elf.AddItem(arcoDeGaladhrim);
+            elf.CalculateAttackValue();
 
             // Verificamos que el valor de ataque aumenta
             Assert.That(elf.AttackValue, Is.EqualTo(35));
