@@ -8,9 +8,4 @@ public class EnemyCharacter : BaseCharacter
     {
         this.VictoryPoints = victoryPoints;
     }
-    
-    public void AddVictoryPoints(int points)
-    {
-        VictoryPoints += points;
-    }
 }
