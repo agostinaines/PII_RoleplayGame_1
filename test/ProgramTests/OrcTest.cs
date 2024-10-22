@@ -53,22 +53,23 @@ namespace ProgramTests
         public void AgregarItem_AumentaValorAtaque()
         {
             // Creamos un item de prueba
-            Sword espadaRustica = new Sword("Espada Rustica", 25, 0);           
+            Sword espadaRustica = new Sword("Espada Rustica", 25, 0);
             orc.AddItem(espadaRustica);
 
             // Verificamos que el valor de ataque aumenta
             Assert.That(orc.AttackValue, Is.EqualTo(25));
             Assert.That(orc.Items.Count, Is.EqualTo(1));
 
-        [Test]
-        public void RecibirAtaque_AEnemigoMuerto_NoCambiaVida()
-        {
-            // Reducimos la vida a cero
-            orc.ReceiveAttack(200);
-            orc.ReceiveAttack(30);
+            [Test]
+            void RecibirAtaque_AEnemigoMuerto_NoCambiaVida()
+            {
+                // Reducimos la vida a cero
+                orc.ReceiveAttack(200);
+                orc.ReceiveAttack(30);
 
-            // Verificamos que la vida no cambia
-            Assert.That(orc.Health, Is.EqualTo(0));
+                // Verificamos que la vida no cambia
+                Assert.That(orc.Health, Is.EqualTo(0));
+            }
         }
     }
 }
